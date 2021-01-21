@@ -1,0 +1,1122 @@
+package §_-2bm§
+{
+   import §_-3A1§.§_-dE§;
+   import §_-pM§.§_-7C§;
+   import com.distriqt.extension.core.Core;
+   import com.distriqt.extension.facebookapi.AccessToken;
+   import com.distriqt.extension.facebookapi.FacebookAPI;
+   import com.distriqt.extension.facebookapi.Profile;
+   import com.distriqt.extension.facebookapi.events.FacebookAPISessionEvent;
+   import com.distriqt.extension.facebookapi.events.GraphAPIRequestEvent;
+   import com.distriqt.extension.facebookapi.graphapi.GraphAPIRequest;
+   import com.distriqt.extension.facebookapi.graphapi.builders.GraphAPIRequestBuilder;
+   import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   
+   [SecureSWF(rename="false")]
+   public class FacebookLoginHelper extends EventDispatcher implements IEventDispatcher
+   {
+      
+      private static const ANE_DEVELOPER_KEY:String = "66c181391b50be1b11165827b2762f962714f4a3Xi/Sq09vwrzu6K4HYYSR6cJtnB+FvRom1EKQl9AepUwjSTAzToYAxqbhB+2JDGjhCtT6lXRppBsRDDwnAj7RqQFhYxSjUQGFV1DHM5Rys6/KnSjKnx4Lmmyj7zYlcjfPc0P5jrYzcOz8fpnlljIrFxLNI93DU5xHvNRQrFyTCv8Kfbh1KtI8HpzGKA1HCkJvsLjAkksdY5dzrSsnomrdNfrko+DeQdkyiG4A38CMGv8yAsL6nZXLYK9Up4XWfe27680iMWB975/ysXKuwyJVnj1kHH2SFScmEo7AQ1XtcJUlSfFhk4+q1LjD6oVVYO8Y/QqBBk1l3whW7OsS7nJ+CQ==";
+      
+      private static const URL_SCHEME_SUFFIX:String = "";
+      
+      {
+         method
+         name ""
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         findproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"ANE_DEVELOPER_KEY")
+         pushstring "66c181391b50be1b11165827b2762f962714f4a3Xi/Sq09vwrzu6K4HYYSR6cJtnB+FvRom1EKQl9AepUwjSTAzToYAxqbhB+2JDGjhCtT6lXRppBsRDDwnAj7RqQFhYxSjUQGFV1DHM5Rys6/KnSjKnx4Lmmyj7zYlcjfPc0P5jrYzcOz8fpnlljIrFxLNI93DU5xHvNRQrFyTCv8Kfbh1KtI8HpzGKA1HCkJvsLjAkksdY5dzrSsnomrdNfrko+DeQdkyiG4A38CMGv8yAsL6nZXLYK9Up4XWfe27680iMWB975/ysXKuwyJVnj1kHH2SFScmEo7AQ1XtcJUlSfFhk4+q1LjD6oVVYO8Y/QqBBk1l3whW7OsS7nJ+CQ=="
+         initproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"ANE_DEVELOPER_KEY")
+         findproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"URL_SCHEME_SUFFIX")
+         pushstring ""
+         initproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"URL_SCHEME_SUFFIX")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var _isFacebookInitialized:Boolean;
+      
+      private var _appId:String;
+      
+      private var _firstName:String;
+      
+      private var _name:String;
+      
+      private var _lastName:String;
+      
+      public function FacebookLoginHelper(param1:String)
+      {
+         method
+         name "_-2bm:FacebookLoginHelper/FacebookLoginHelper"
+         param Qname(PackageNamespace(""),"String")
+         returns null
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         constructsuper 0
+         getlocal_0
+         getlocal_1
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_appId")
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"initFacebook") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function get isFacebookSupported() : Boolean
+      {
+         trait getter Qname(PackageNamespace(""),"isFacebookSupported")
+         flag FINAL
+         dispid 3
+         method
+         name "_-2bm:FacebookLoginHelper:isFacebookSupported/get"
+         returns Qname(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal_0
+         pushscope
+         pushtrue
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get appId() : String
+      {
+         trait getter Qname(PackageNamespace(""),"appId")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:appId/get"
+         returns Qname(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_appId")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:dispose"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_isFacebookInitialized")
+         iffalse ofs00ea
+         getlex Qname(PackageNamespace("_-3A1"),"_-dE")
+         pushstring "autologin"
+         callproperty Multiname("_-2dp",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 1
+         not
+         iffalse ofs0020
+         getlocal_0
+         callpropvoid Qname(PackageNamespace(""),"closeSession") 0
+         ofs0020:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Multiname("isDesktop",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 0
+         not
+         dup
+         iffalse ofs0034
+         pop
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"isSupported")
+         ofs0034:iffalse ofs00ea
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:opened"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:disabled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:cancelled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:closed"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:close:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:cancelled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:completed"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         ofs00ea:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function isSessionOpen() : Boolean
+      {
+         trait method Qname(PackageNamespace(""),"isSessionOpen")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:isSessionOpen"
+         returns Qname(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace(""),"isFacebookSupported")
+         iffalse ofs0014
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"isSessionOpen") 0
+         returnvalue
+         ofs0014:pushfalse
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function getAccessToken() : String
+      {
+         trait method Qname(PackageNamespace(""),"getAccessToken")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:getAccessToken"
+         returns Qname(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 86
+         pushnull
+         coerce_a
+         setlocal_1
+         getlex Qname(PackageNamespace(""),"isFacebookSupported")
+         iffalse ofs0033
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"getAccessToken") 0
+         coerce_a
+         setlocal_1
+         getlocal_1
+         not
+         not
+         iffalse ofs0030
+         getlocal_1
+         getproperty Multiname("token",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         jump ofs0032
+         ofs0030:pushstring ""
+         ofs0032:returnvalue
+         ofs0033:pushstring ""
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function getFBName() : String
+      {
+         trait method Qname(PackageNamespace(""),"getFBName")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:getFBName"
+         returns Qname(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_name")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function closeSession() : void
+      {
+         trait method Qname(PackageNamespace(""),"closeSession")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:closeSession"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace(""),"isFacebookSupported")
+         iffalse ofs0013
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callpropvoid Qname(PackageNamespace(""),"closeSession") 0
+         ofs0013:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function startFacebookLogin() : void
+      {
+         trait method Qname(PackageNamespace(""),"startFacebookLogin")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper:startFacebookLogin"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 3
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 110
+         debug 1 "_loc2_" 1 111
+         pushnull
+         coerce_a
+         setlocal_1
+         pushfalse
+         convert_b
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"isFacebookSupported")
+         iffalse ofs0148
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:opened"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:cancelled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:open:disabled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:closed"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:session:close:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:cancelled"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:completed"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         pushstring "facebookapi:permissions:request:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 5
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"isSessionOpen") 0
+         iffalse ofs010b
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"getCurrentUserInfo") 0
+         jump ofs0148
+         ofs010b:pushstring "email"
+         newarray 1
+         coerce_a
+         setlocal_1
+         pushtrue
+         convert_b
+         setlocal_2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getlocal_1
+         getlocal_2
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"userHasIntegratedFacebookAccount") 0
+         not
+         not
+         iffalse ofs0136
+         pushstring "system_account"
+         jump ofs013a
+         ofs0136:pushstring "native_with_fallback"
+         ofs013a:callpropvoid Qname(PackageNamespace(""),"createSession") 3
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "FacebookLoginHelper.onLoginWithFacebook: waiting callback from createSession.."
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs0148:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function initFacebook() : void
+      {
+         trait method Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"initFacebook")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper/private:initFacebook"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_isFacebookInitialized")
+         iffalse ofs000c
+         returnvoid
+         ofs000c:getlex Qname(PackageNamespace(""),"isFacebookSupported")
+         iffalse ofs00d5
+         getlex Qname(PackageNamespace("com.distriqt.extension.core"),"Core")
+         callpropvoid Qname(PackageNamespace(""),"init") 0
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         pushstring "66c181391b50be1b11165827b2762f962714f4a3Xi/Sq09vwrzu6K4HYYSR6cJtnB+FvRom1EKQl9AepUwjSTAzToYAxqbhB+2JDGjhCtT6lXRppBsRDDwnAj7RqQFhYxSjUQGFV1DHM5Rys6/KnSjKnx4Lmmyj7zYlcjfPc0P5jrYzcOz8fpnlljIrFxLNI93DU5xHvNRQrFyTCv8Kfbh1KtI8HpzGKA1HCkJvsLjAkksdY5dzrSsnomrdNfrko+DeQdkyiG4A38CMGv8yAsL6nZXLYK9Up4XWfe27680iMWB975/ysXKuwyJVnj1kHH2SFScmEo7AQ1XtcJUlSfFhk4+q1LjD6oVVYO8Y/QqBBk1l3whW7OsS7nJ+CQ=="
+         callpropvoid Qname(PackageNamespace(""),"init") 1
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Multiname("_-4Em",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 0
+         not
+         iffalse ofs0031
+         ofs0031:getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_appId")
+         pushstring ""
+         callpropvoid Qname(PackageNamespace(""),"initialiseApp") 2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "FacebookAPI Supported:  "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"isSupported")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "FacebookAPI Version:    "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getproperty Qname(PackageNamespace(""),"version")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook SDK Version:   "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"getSDKVersion") 0
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook Integrated FB: "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"userHasIntegratedFacebookAccount") 0
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook App Installed: "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         callproperty Qname(PackageNamespace(""),"isFacebookAppInstalled") 0
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook native version: "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getproperty Qname(PackageNamespace(""),"nativeVersion")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook implementation: "
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getproperty Qname(PackageNamespace(""),"implementation")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         pushtrue
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_isFacebookInitialized")
+         jump ofs00de
+         ofs00d5:getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "FacebookAPI extension is not supported on this platform."
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs00de:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onFacebookSessionEvent(param1:FacebookAPISessionEvent) : void
+      {
+         trait method Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onFacebookSessionEvent")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper/private:onFacebookSessionEvent"
+         param Qname(PackageNamespace("com.distriqt.extension.facebookapi.events"),"FacebookAPISessionEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 6
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 179
+         debug 1 "_loc3_" 2 169
+         debug 1 "_loc4_" 3 193
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Received Facebook Session Event: "
+         getlocal_1
+         getproperty Multiname("type",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"accessToken")
+         coerce Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"AccessToken")
+         setlocal_3
+         getlocal_3
+         pushnull
+         ifeq ofs00a5
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] User ID: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"userId")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Application ID: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"applicationId")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Access token: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"token")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Expiration date: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"expirationTimestamp")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Permissions: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"permissions")
+         pushstring ", "
+         callproperty Multiname("join",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Declined permissions: "
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"declinedPermissions")
+         pushstring ", "
+         callproperty Multiname("join",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs00a5:getlocal_1
+         getproperty Qname(PackageNamespace(""),"profile")
+         coerce Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"Profile")
+         setlocal_2
+         getlocal_2
+         pushnull
+         ifeq ofs0134
+         getlocal_0
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"firstName")
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_firstName")
+         getlocal_0
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"name")
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_name")
+         getlocal_0
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"lastName")
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_lastName")
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile id: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"id")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile name: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"name")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile first name: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"firstName")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile middle name: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"middleName")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile last name: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"lastName")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile link URL: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"linkUrl")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Profile picture URL: "
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"pictureUrl")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs0134:getlocal_1
+         getproperty Multiname("type",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         coerce_a
+         setlocal 4
+         jump ofs01e9
+         ofs0140:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Session opened"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"getCurrentUserInfo") 0
+         jump ofs0273
+         ofs0154:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Session open error: "
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorCode")
+         add
+         pushstring " "
+         add
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorMessage")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         findpropstrict Qname(PackageNamespace(""),"dispatchEvent")
+         findpropstrict Qname(PackageNamespace("_-2bm"),"_-00P")
+         pushstring "FLE_SESSION_ERROR"
+         constructprop Qname(PackageNamespace("_-2bm"),"_-00P") 1
+         callpropvoid Qname(PackageNamespace(""),"dispatchEvent") 1
+         jump ofs0273
+         ofs017f:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Session login is disabled"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         findpropstrict Qname(PackageNamespace(""),"dispatchEvent")
+         findpropstrict Qname(PackageNamespace("_-2bm"),"_-00P")
+         pushstring "FLE_FACEBOOK_DISABLED"
+         constructprop Qname(PackageNamespace("_-2bm"),"_-00P") 1
+         callpropvoid Qname(PackageNamespace(""),"dispatchEvent") 1
+         jump ofs0273
+         ofs019c:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] User cancelled sign-in"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         jump ofs0273
+         ofs01aa:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Session closed"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         jump ofs0273
+         ofs01b8:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Error for session closed: "
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorCode")
+         add
+         pushstring " "
+         add
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorMessage")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         jump ofs0273
+         ofs01d4:label
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] Received unhandled SESSION event: "
+         getlocal_1
+         getproperty Multiname("type",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs01e4:label
+         jump ofs0273
+         ofs01e9:getlocal 4
+         setlocal 5
+         pushstring "facebookapi:session:opened"
+         getlocal 5
+         ifstrictne ofs01fd
+         pushbyte 0
+         jump ofs0257
+         ofs01fd:pushstring "facebookapi:session:open:error"
+         getlocal 5
+         ifstrictne ofs020d
+         pushbyte 1
+         jump ofs0257
+         ofs020d:pushstring "facebookapi:session:open:disabled"
+         getlocal 5
+         ifstrictne ofs021d
+         pushbyte 2
+         jump ofs0257
+         ofs021d:pushstring "facebookapi:session:open:cancelled"
+         getlocal 5
+         ifstrictne ofs022c
+         pushbyte 3
+         jump ofs0257
+         ofs022c:pushstring "facebookapi:session:closed"
+         getlocal 5
+         ifstrictne ofs023c
+         pushbyte 4
+         jump ofs0257
+         ofs023c:pushstring "facebookapi:session:close:error"
+         getlocal 5
+         ifstrictne ofs024b
+         pushbyte 5
+         jump ofs0257
+         ofs024b:jump ofs0255
+         pushbyte 6
+         jump ofs0255
+         ofs0255:pushbyte 6
+         ofs0257:kill 5
+         lookupswitch ofs01e4 6 ofs0140 ofs0154 ofs017f ofs019c ofs01aa ofs01b8 ofs01d4
+         ofs0273:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onGraphApiComplete(param1:GraphAPIRequestEvent) : void
+      {
+         trait method Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiComplete")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper/private:onGraphApiComplete"
+         param Qname(PackageNamespace("com.distriqt.extension.facebookapi.events"),"GraphAPIRequestEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] GRAPH_REQUEST_COMPLETED"
+         getlocal_1
+         getproperty Multiname("type",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         pushstring " "
+         add
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"data")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_name")
+         pushnull
+         equals
+         dup
+         iftrue ofs0035
+         pop
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_name")
+         pushstring ""
+         equals
+         ofs0035:iffalse ofs0046
+         getlocal_0
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"data")
+         getproperty Multiname("name",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         coerce_s
+         setproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"_name")
+         ofs0046:getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Facebook session ready, access data received."
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         findpropstrict Qname(PackageNamespace(""),"dispatchEvent")
+         findpropstrict Qname(PackageNamespace("_-2bm"),"_-00P")
+         pushstring "FLE_SESSION_READY"
+         constructprop Qname(PackageNamespace("_-2bm"),"_-00P") 1
+         callpropvoid Qname(PackageNamespace(""),"dispatchEvent") 1
+         getlocal_1
+         getproperty Multiname("currentTarget",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         pushstring "facebookapi:graphapirequest:complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiComplete")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlocal_1
+         getproperty Multiname("currentTarget",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         pushstring "facebookapi:graphapirequest:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiError")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onGraphApiError(param1:GraphAPIRequestEvent) : void
+      {
+         trait method Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiError")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper/private:onGraphApiError"
+         param Qname(PackageNamespace("com.distriqt.extension.facebookapi.events"),"GraphAPIRequestEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "[Facebook] GRAPH_REQUEST_ERROR: "
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorCode")
+         add
+         pushstring " "
+         add
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"errorMessage")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         findpropstrict Qname(PackageNamespace(""),"dispatchEvent")
+         findpropstrict Qname(PackageNamespace("_-2bm"),"_-00P")
+         pushstring "FLE_SESSION_ERROR"
+         constructprop Qname(PackageNamespace("_-2bm"),"_-00P") 1
+         callpropvoid Qname(PackageNamespace(""),"dispatchEvent") 1
+         getlocal_1
+         getproperty Multiname("currentTarget",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         pushstring "facebookapi:graphapirequest:complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiComplete")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlocal_1
+         getproperty Multiname("currentTarget",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         pushstring "facebookapi:graphapirequest:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiError")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function getCurrentUserInfo() : void
+      {
+         trait method Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"getCurrentUserInfo")
+         dispid 0
+         method
+         name "_-2bm:FacebookLoginHelper/private:getCurrentUserInfo"
+         flag NEED_ACTIVATION
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 6
+         maxscopedepth 11
+         try from ofs0061 to ofs0081 target ofs0085 type Qname(PackageNamespace(""),"Error") name Qname(PackageNamespace(""),"error")
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 249
+         debug 1 "_loc2_" 1 246
+         newactivation
+         dup
+         setlocal_1
+         pushscope
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Get current user info"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getscopeobject 1
+         findpropstrict Qname(PackageNamespace("com.distriqt.extension.facebookapi.graphapi.builders"),"GraphAPIRequestBuilder")
+         constructprop Qname(PackageNamespace("com.distriqt.extension.facebookapi.graphapi.builders"),"GraphAPIRequestBuilder") 0
+         coerce Qname(PackageNamespace("com.distriqt.extension.facebookapi.graphapi.builders"),"GraphAPIRequestBuilder")
+         setslot 1
+         getscopeobject 1
+         getslot 1
+         pushstring "/me"
+         callpropvoid Qname(PackageNamespace(""),"setPath") 1
+         getscopeobject 1
+         getslot 1
+         pushstring "name"
+         callpropvoid Qname(PackageNamespace(""),"addField") 1
+         getscopeobject 1
+         getscopeobject 1
+         getslot 1
+         callproperty Qname(PackageNamespace(""),"build") 0
+         coerce Qname(PackageNamespace("com.distriqt.extension.facebookapi.graphapi"),"GraphAPIRequest")
+         setslot 2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Created request: "
+         getscopeobject 1
+         getslot 2
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs0061:getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Request data: "
+         getscopeobject 1
+         getslot 2
+         getproperty Multiname("path",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         pushstring " fields: "
+         add
+         getscopeobject 1
+         getslot 2
+         getproperty Multiname("fields",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs0081:jump ofs00c2
+         ofs0085:getlocal_0
+         pushscope
+         getlocal_1
+         pushscope
+         newcatch 0
+         dup
+         setlocal_2
+         dup
+         pushscope
+         swap
+         setslot 1
+         findpropstrict Qname(PackageNamespace(""),"trace")
+         pushstring "Could not request data, error: "
+         getscopeobject 2
+         getslot 1
+         callproperty Multiname("getStackTrace",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 0
+         add
+         getscopeobject 2
+         getslot 1
+         getproperty Multiname("message",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         getscopeobject 2
+         getslot 1
+         getproperty Multiname("errorID",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         getscopeobject 2
+         getslot 1
+         getproperty Multiname("name",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         callpropvoid Qname(PackageNamespace(""),"trace") 4
+         popscope
+         kill 2
+         ofs00c2:getscopeobject 1
+         getslot 2
+         pushstring "facebookapi:graphapirequest:complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiComplete")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getscopeobject 1
+         getslot 2
+         pushstring "facebookapi:graphapirequest:error"
+         getlocal_0
+         getproperty Qname(PrivateNamespace("_-2bm:FacebookLoginHelper"),"onGraphApiError")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Make request: "
+         getscopeobject 1
+         getslot 2
+         getproperty Multiname("path",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         pushstring " fields: "
+         add
+         getscopeobject 1
+         getslot 2
+         getproperty Multiname("fields",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace("com.distriqt.extension.facebookapi"),"FacebookAPI")
+         getproperty Qname(PackageNamespace(""),"service")
+         getproperty Qname(PackageNamespace(""),"graphAPI")
+         getscopeobject 1
+         getslot 2
+         callpropvoid Multiname("makeRequest",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("_-2bm"),PackageInternalNs("_-2bm"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace("_-2bm:FacebookLoginHelper"),ProtectedNamespace("_-2bm:FacebookLoginHelper"),StaticProtectedNs("_-2bm:FacebookLoginHelper"),PrivateNamespace("FacebookLoginHelper.as$319")]) 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Request done"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

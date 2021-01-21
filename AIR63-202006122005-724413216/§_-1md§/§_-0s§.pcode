@@ -1,0 +1,2388 @@
+package §_-1md§
+{
+   import §_-0Jq§.§_-0NB§;
+   import §_-1Pm§.§_-1OW§;
+   import §_-1Pm§.§_-2Y2§;
+   import §_-1Pm§.§_-lp§;
+   import §_-1la§.§_-1H2§;
+   import §_-1la§.§_-4Pn§;
+   import §_-1la§.§_-l-§;
+   import §_-2RF§.§_-3TZ§;
+   import §_-2T5§.Button;
+   import §_-2T5§.LayoutGroup;
+   import §_-2T5§.§_-0n7§;
+   import §_-2T5§.§_-2UZ§;
+   import §_-2T5§.§_-3-o§;
+   import §_-2T5§.§_-a6§;
+   import §_-2T5§.§_-eo§;
+   import §_-2bm§.FacebookLoginHelper;
+   import §_-2bm§.§_-00P§;
+   import §_-3A1§.§_-dE§;
+   import §_-3CR§.§_-27Y§;
+   import §_-3Lb§.§_-v4§;
+   import §_-4Sp§.GestureEvent;
+   import §_-Dk§.§_-2u6§;
+   import §_-pM§.§_-7C§;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import flash.utils.Dictionary;
+   import starling.display.DisplayObject;
+   import starling.display.Image;
+   import starling.events.Event;
+   import starling.events.Touch;
+   import starling.events.TouchEvent;
+   
+   public class §_-0s§ extends §_-0bl§ implements §_-1OW§
+   {
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 0
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 0
+         
+         code
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var §_-42§:§_-2UZ§;
+      
+      private var §_-Vb§:§_-2UZ§;
+      
+      private var §_-O2§:§_-2UZ§;
+      
+      private var §_-1XC§:§_-2UZ§;
+      
+      private var §_-0Ym§:§_-eo§;
+      
+      private var §_-43c§:§_-eo§;
+      
+      private var §_-2nE§:§_-0n7§;
+      
+      private var §_-3xL§:Button;
+      
+      private var §_-482§:Button;
+      
+      private var §_-0Dg§:§_-3-o§;
+      
+      private var §_-43X§:§_-3-o§;
+      
+      private var _icon:§_-a6§;
+      
+      private var §_-26f§:Object;
+      
+      private var §_-0-K§:§_-2u6§;
+      
+      private var §_-Ug§:§_-2Y2§;
+      
+      public function §_-0s§(param1:§_-lp§, param2:§_-3TZ§)
+      {
+         method
+         name null
+         param Qname(PackageNamespace("_-1Pm"),"_-lp")
+         param Qname(PackageNamespace("_-2RF"),"_-3TZ")
+         returns null
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getlocal_1
+         getlocal_2
+         pushfalse
+         constructsuper 3
+         getlocal_0
+         pushstring "off"
+         setproperty Qname(PackageNamespace(""),"horizontalScrollPolicy")
+         getlocal_0
+         pushstring "off"
+         setproperty Qname(PackageNamespace(""),"verticalScrollPolicy")
+         findpropstrict Qname(PackageNamespace(""),"addEventListener")
+         pushstring "addedToStage"
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"onAddedToStage")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         iffalse ofs0024
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2CQ")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         ofs0024:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         iffalse ofs0046
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4ZI")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         ofs0046:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         iffalse ofs0068
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-es")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         ofs0068:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         iffalse ofs007d
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         ofs007d:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         iffalse ofs0092
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         ofs0092:getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         dup
+         iffalse ofs00a2
+         pop
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         coerce_a
+         ofs00a2:iffalse ofs00d6
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         pushstring "FLE_SESSION_READY"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0oR")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         pushstring "FLE_FACEBOOK_DISABLED"
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-WX")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         pushstring "FLE_SESSION_ERROR"
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0UX")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         ofs00d6:pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-42")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-42")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-O2")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-O2")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         getlocal_0
+         callsupervoid Qname(PackageNamespace(""),"dispose") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-4Jq§() : void
+      {
+         trait method Qname(PackageNamespace(""),"_-4Jq")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         pushstring "environment.id"
+         callproperty Qname(PackageNamespace(""),"getProperty") 1
+         coerce_s
+         setlocal_1
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getlocal_1
+         callproperty Qname(PackageNamespace(""),"_-16V") 1
+         iffalse ofs0028
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_icon")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getlocal_1
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         setproperty Qname(PackageNamespace(""),"source")
+         jump ofs0036
+         ofs0028:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_icon")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "H_logo_small"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         setproperty Qname(PackageNamespace(""),"source")
+         ofs0036:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-20U§(param1:Object = null) : void
+      {
+         trait method Qname(PackageNamespace(""),"_-20U")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace(""),"Object")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushnull
+         equals
+         not
+         dup
+         iffalse ofs0018
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getproperty Qname(PackageNamespace(""),"stage")
+         pushnull
+         equals
+         not
+         ofs0018:iffalse ofs0058
+         getlocal_1
+         pushnull
+         ifeq ofs0030
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4jj")
+         getlocal_1
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4jj") 1
+         jump ofs0054
+         ofs0030:getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.-3.desc"
+         pushstring "login error"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal_2
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushtrue
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         ofs0054:jump ofs0060
+         ofs0058:getlocal_1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         ofs0060:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4gv§(param1:String, param2:DisplayObject, param3:String = "any", param4:Boolean = true, param5:Boolean = false) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace("starling.display"),"DisplayObject")
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace(""),"Boolean")
+         param Qname(PackageNamespace(""),"Boolean")
+         optional "any"
+         optional true
+         optional false
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 14
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 8
+         getlocal_2
+         pushnull
+         equals
+         dup
+         iftrue ofs0013
+         pop
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"stage")
+         pushnull
+         equals
+         ofs0013:iffalse ofs0018
+         returnvoid
+         ofs0018:findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 12
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-l-")
+         constructprop Qname(PackageNamespace("_-1la"),"_-l-") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-l-")
+         dup
+         dup
+         dup
+         dup
+         setlocal 6
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 40
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         dup
+         setlocal 13
+         setproperty Qname(PackageNamespace(""),"paddingBottom")
+         getlocal 13
+         dup
+         setlocal 13
+         setproperty Qname(PackageNamespace(""),"paddingRight")
+         getlocal 13
+         dup
+         setlocal 13
+         setproperty Qname(PackageNamespace(""),"paddingLeft")
+         getlocal 13
+         setproperty Qname(PackageNamespace(""),"paddingTop")
+         getlocal 6
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 12
+         getlocal 6
+         setproperty Qname(PackageNamespace(""),"layout")
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-4Pn")
+         dup
+         setlocal 7
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"top")
+         getlocal 7
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"left")
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.to.environment"
+         pushstring "Connecting to"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         dup
+         setlocal 9
+         pushstring " "
+         add
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         pushstring "connection.info.name."
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         getproperty Qname(PackageNamespace(""),"environmentId")
+         add
+         callproperty Qname(PackageNamespace(""),"getProperty") 1
+         add
+         pushstring "  "
+         add
+         coerce_s
+         setlocal 11
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 10
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_WARNING"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 10
+         getlocal_1
+         getlocal 4
+         iffalse ofs00dd
+         pushstring "  \r"
+         getlocal 11
+         add
+         jump ofs00e0
+         ofs00dd:pushstring ""
+         coerce_s
+         ofs00e0:add
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 10
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"wordWrap")
+         getlocal 10
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 900
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"maxWidth")
+         getlocal 12
+         getlocal 10
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlocal 5
+         iffalse ofs0147
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 8
+         pushstring "${login.environment.forgot.password}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 8
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_LINK_LIGHT_GRAY"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 8
+         getlex Qname(PackageNamespace("_-3CR"),"_-27Y")
+         callproperty Qname(PackageNamespace(""),"_-22n") 0
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlocal 8
+         getproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PackageNamespace("_-1la"),"_-4Pn")
+         astypelate
+         pushbyte 0
+         setproperty Qname(PackageNamespace(""),"horizontalCenter")
+         getlocal 8
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2kE")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal 12
+         getlocal 8
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         ofs0147:getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal 12
+         getlocal_2
+         getlocal_3
+         callpropvoid Qname(PackageNamespace(""),"show") 3
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4jj§(param1:Object) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4jj")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace(""),"Object")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 7
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 4
+         pushnull
+         setlocal_2
+         getlocal_1
+         getproperty Multiname("errors",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce Qname(PackageNamespace(""),"Array")
+         dup
+         setlocal 5
+         dup
+         iffalse ofs001f
+         pop
+         getlocal 5
+         getproperty Qname(PackageNamespace(""),"length")
+         pushbyte 0
+         greaterthan
+         coerce_a
+         ofs001f:iffalse ofs002f
+         getlocal 5
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         jump ofs0032
+         ofs002f:pushstring ""
+         coerce_a
+         ofs0032:coerce_s
+         setlocal_3
+         getlocal_3
+         pushstring ""
+         equals
+         dup
+         iffalse ofs0042
+         pop
+         getlocal_1
+         pushnull
+         equals
+         not
+         ofs0042:iffalse ofs006c
+         getlocal_1
+         getproperty Multiname("error",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         pushnull
+         ifeq ofs005b
+         getlocal_1
+         getproperty Multiname("error",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce_s
+         setlocal_3
+         jump ofs006c
+         ofs005b:getlocal_1
+         getproperty Multiname("message",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         pushnull
+         ifeq ofs006c
+         getlocal_1
+         getproperty Multiname("message",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce_s
+         setlocal_3
+         ofs006c:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1rS")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1rS") 0
+         getlocal_3
+         setlocal 6
+         jump ofs0269
+         ofs007a:label
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         callpropvoid Qname(PackageNamespace(""),"showCaptchaView") 0
+         jump ofs02ed
+         ofs0086:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.banned.desc"
+         pushstring "login.user_banned"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 3
+         jump ofs02ed
+         ofs00af:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.blocked.desc"
+         pushstring "login.blocked"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 3
+         jump ofs02ed
+         ofs00d8:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.unauthorized.staff"
+         pushstring "unauthorized-staff-login"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 3
+         jump ofs02ed
+         ofs0101:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.-3.desc"
+         pushstring "pocket.auth.login_failed"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushtrue
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs02ed
+         ofs012c:label
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s")
+         pushstring "${connection.login.error.noavatars.title}"
+         pushstring "${connection.login.error.noavatars.desc}"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s") 2
+         jump ofs02ed
+         ofs0140:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.missing_credentials"
+         pushstring "pocket.auth.valid_email_required"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushtrue
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs02ed
+         ofs016b:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.missing_credentials"
+         pushstring "pocket.auth.password_required"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushstring "up"
+         pushtrue
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs02ed
+         ofs0196:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.facebook_disabled.desc"
+         pushstring "pocket.auth.facebook_disabled"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "up"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 3
+         jump ofs02ed
+         ofs01bf:label
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         pushstring "url.prefix"
+         callproperty Qname(PackageNamespace(""),"getProperty") 1
+         coerce_s
+         setlocal_2
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "facebook.link_creation_description"
+         pushstring "url"
+         getlocal_2
+         callpropvoid Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"registerParameter") 3
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s")
+         pushstring "${facebook.link_creation_title}"
+         pushstring "${facebook.link_creation_description}"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s") 2
+         jump ofs02ed
+         ofs01f1:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.facebook_accesstoken.desc"
+         pushstring "pocket.auth.access_token_required"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "up"
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 3
+         jump ofs02ed
+         ofs021a:label
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.error.-400.desc"
+         pushstring "pocket.auth.login_failed"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushtrue
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs02ed
+         ofs0245:label
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s")
+         pushstring "${generic.alert.title}"
+         pushstring "${login.account_issue_description}"
+         pushstring "${generic.ok}"
+         pushfalse
+         pushfalse
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s") 5
+         jump ofs02ed
+         ofs025d:label
+         findpropstrict Qname(PackageNamespace(""),"_-20U")
+         callpropvoid Qname(PackageNamespace(""),"_-20U") 0
+         jump ofs02ed
+         ofs0269:pushstring "invalid-captcha"
+         getlocal 6
+         ifstricteq ofs007a
+         pushstring "login.user_banned"
+         getlocal 6
+         ifstricteq ofs0086
+         pushstring "login.blocked"
+         getlocal 6
+         ifstricteq ofs00af
+         pushstring "unauthorized-staff-login"
+         getlocal 6
+         ifstricteq ofs00d8
+         pushstring "pocket.auth.login_failed"
+         getlocal 6
+         ifstricteq ofs0101
+         pushstring "pocket.auth.no_avatars"
+         getlocal 6
+         ifstricteq ofs012c
+         pushstring "pocket.auth.valid_email_required"
+         getlocal 6
+         ifstricteq ofs0140
+         pushstring "pocket.auth.password_required"
+         getlocal 6
+         ifstricteq ofs016b
+         pushstring "pocket.auth.facebook_disabled"
+         getlocal 6
+         ifstricteq ofs0196
+         pushstring "pocket.auth.facebook_not_connected"
+         getlocal 6
+         ifstricteq ofs01bf
+         pushstring "pocket.auth.access_token_required"
+         getlocal 6
+         ifstricteq ofs01f1
+         pushstring "ioError"
+         getlocal 6
+         ifstricteq ofs021a
+         pushstring "account_issue"
+         getlocal 6
+         ifstricteq ofs0245
+         jump ofs025d
+         ofs02ed:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-1rS§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1rS")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         iffalse ofs0015
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getlex Qname(PackageNamespace("_-2bm"),"FacebookLoginHelper")
+         getproperty Qname(PackageNamespace(""),"isFacebookSupported")
+         setproperty Qname(PackageNamespace(""),"isEnabled")
+         ofs0015:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-17s§(param1:String, param2:String, param3:String = "${facebook.create_link_in_web}", param4:Boolean = true, param5:Boolean = true) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-17s")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace(""),"Boolean")
+         param Qname(PackageNamespace(""),"Boolean")
+         optional "${facebook.create_link_in_web}"
+         optional true
+         optional true
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 13
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 8
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 10
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-l-")
+         constructprop Qname(PackageNamespace("_-1la"),"_-l-") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-l-")
+         dup
+         setlocal 6
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"padding")
+         getlocal 6
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 6
+         pushstring "center"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal 10
+         getlocal 6
+         setproperty Qname(PackageNamespace(""),"layout")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 11
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_M_LIGHT_BLUE"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 11
+         getlocal_1
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 10
+         getlocal 11
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 7
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 600
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal 7
+         getproperty Qname(PackageNamespace(""),"textRendererProperties")
+         pushtrue
+         setproperty Multiname("wordWrap",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlocal 7
+         getlocal_2
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 10
+         getlocal 7
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"Button")
+         constructprop Qname(PackageNamespace("_-2T5"),"Button") 0
+         coerce Qname(PackageNamespace("_-2T5"),"Button")
+         dup
+         setlocal 9
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-blue-button"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 9
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2UW")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal 9
+         getlocal_3
+         setproperty Qname(PackageNamespace(""),"label")
+         getlocal 4
+         iffalse ofs00c8
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-a6")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-a6") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-a6")
+         dup
+         setlocal 8
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "fb_icon"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         setproperty Qname(PackageNamespace(""),"source")
+         getlocal 9
+         getlocal 8
+         setproperty Qname(PackageNamespace(""),"defaultIcon")
+         ofs00c8:getlocal 10
+         getlocal 9
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlocal 5
+         iffalse ofs00dc
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         jump ofs00e1
+         ofs00dc:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         coerce Qname(PackageNamespace("_-2T5"),"Button")
+         ofs00e1:coerce Qname(PackageNamespace("_-0Jq"),"_-0NB")
+         setlocal 12
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal 10
+         getlocal 12
+         pushstring "up"
+         pushfalse
+         callproperty Qname(PackageNamespace(""),"show") 4
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function §_-WX§(param1:§_-00P§) : void
+      {
+         trait method Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-WX")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-2bm"),"_-00P")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         setlocal_2
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_WARNING"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_2
+         pushstring "${connection.login.facebook.canceled}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         dup
+         iffalse ofs0029
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getproperty Qname(PackageNamespace(""),"stage")
+         coerce_a
+         ofs0029:iffalse ofs003b
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "up"
+         callpropvoid Qname(PackageNamespace(""),"show") 3
+         ofs003b:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function §_-0UX§(param1:§_-00P§) : void
+      {
+         trait method Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0UX")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-2bm"),"_-00P")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         setlocal_2
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_WARNING"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_2
+         pushstring "${connection.login.facebook.error}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         dup
+         iffalse ofs0029
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getproperty Qname(PackageNamespace(""),"stage")
+         coerce_a
+         ofs0029:iffalse ofs003b
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "up"
+         callpropvoid Qname(PackageNamespace(""),"show") 3
+         ofs003b:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override protected function initializeHandler(param1:Event) : void
+      {
+         trait method Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"initializeHandler")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 18
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getlocal_1
+         callsupervoid Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"initializeHandler") 1
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-12T") 0
+         pushbyte 0
+         equals
+         setlocal_3
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-l-")
+         constructprop Qname(PackageNamespace("_-1la"),"_-l-") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-l-")
+         dup
+         setlocal 4
+         pushstring "justify"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal 4
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlocal 4
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         pushstring "fixed"
+         setproperty Qname(PackageNamespace(""),"scrollBarDisplayMode")
+         findpropstrict Qname(PackageNamespace(""),"addChild")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 16
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-1H2")
+         constructprop Qname(PackageNamespace("_-1la"),"_-1H2") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-1H2")
+         setlocal_2
+         getlocal_2
+         pushstring "middle"
+         setproperty Qname(PackageNamespace(""),"verticalAlign")
+         getlocal_2
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-1o7")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 16
+         getlocal_2
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlocal 16
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-a6")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-a6") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_icon")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_icon")
+         getlocal 16
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_icon")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         pushstring "${connection.login.login}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_XXL_CONDENSED_LIGHT_GRAY"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 16
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1XC")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         pushstring "${connection.login.information}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_S_BOLD_LIGHT_BLUE"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Vb")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-eo")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-eo") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "${connection.login.email}"
+         setproperty Qname(PackageNamespace(""),"prompt")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4ZI")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getlocal_3
+         iffalse ofs010f
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         jump ofs0117
+         ofs010f:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 50
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         ofs0117:setproperty Qname(PackageNamespace(""),"paddingTop")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getproperty Qname(PackageNamespace(""),"_-2Pq")
+         pushstring "email"
+         setproperty Multiname("softKeyboardType",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getproperty Qname(PackageNamespace(""),"width")
+         setproperty Qname(PackageNamespace(""),"width")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-eo")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-eo") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushstring "${connection.login.password}"
+         setproperty Qname(PackageNamespace(""),"prompt")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"displayAsPassword")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getproperty Qname(PackageNamespace(""),"width")
+         setproperty Qname(PackageNamespace(""),"width")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-es")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"loginName")
+         iffalse ofs0190
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"loginName")
+         jump ofs0193
+         ofs0190:pushstring ""
+         coerce_s
+         ofs0193:setproperty Qname(PackageNamespace(""),"text")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 11
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-1H2")
+         constructprop Qname(PackageNamespace("_-1la"),"_-1H2") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-1H2")
+         dup
+         setlocal 6
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 6
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-3ef")
+         getlocal 6
+         pushstring "middle"
+         setproperty Qname(PackageNamespace(""),"verticalAlign")
+         getlocal 11
+         getlocal 6
+         setproperty Qname(PackageNamespace(""),"layout")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 15
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-1H2")
+         constructprop Qname(PackageNamespace("_-1la"),"_-1H2") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-1H2")
+         dup
+         setlocal 9
+         pushstring "right"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal 9
+         pushstring "middle"
+         setproperty Qname(PackageNamespace(""),"verticalAlign")
+         getlocal 9
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 15
+         getlocal 9
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlocal 15
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 8
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_S_BOLD_LIGHT_GRAY"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 8
+         pushstring "${connection.login.remember_me}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 15
+         getlocal 8
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-0n7")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-0n7") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         pushstring "${toggle.off}"
+         setproperty Qname(PackageNamespace(""),"_-0aO")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         pushstring "${toggle.on}"
+         setproperty Qname(PackageNamespace(""),"_-3XR")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         getlex Qname(PackageNamespace("_-3A1"),"_-dE")
+         pushstring "autologin"
+         callproperty Qname(PackageNamespace(""),"_-2dp") 1
+         setproperty Qname(PackageNamespace(""),"isSelected")
+         getlocal 15
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         findpropstrict Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd")
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-4OE") 0
+         iffalse ofs0278
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-48o")
+         jump ofs027f
+         ofs0278:getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         convert_i
+         ofs027f:callproperty Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd") 2
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlocal 11
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-2KX")
+         pushstring "generic.cancel"
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 0
+         getlocal 11
+         callproperty Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-2KX") 3
+         coerce Qname(PackageNamespace("_-2T5"),"Button")
+         dup
+         setlocal 7
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "feathers-danger-button"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 7
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ry")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         findpropstrict Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-2KX")
+         pushstring "connection.login.letsgo"
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 0
+         getlocal 11
+         callproperty Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-2KX") 3
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-3xL")
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2CQ")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         findpropstrict Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd")
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         callproperty Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd") 2
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "fb_icon"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         callproperty Qname(PackageNamespace(""),"createImage") 1
+         coerce Qname(PackageNamespace("starling.display"),"Image")
+         setlocal 10
+         findpropstrict Qname(PackageNamespace("_-2T5"),"Button")
+         constructprop Qname(PackageNamespace("_-2T5"),"Button") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-blue-button"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2et")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "${connection.login.facebook}"
+         setproperty Qname(PackageNamespace(""),"label")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getlocal 10
+         setproperty Qname(PackageNamespace(""),"defaultIcon")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getproperty Qname(PackageNamespace(""),"defaultLabelProperties")
+         pushfalse
+         setproperty Multiname("isHTML",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 0
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushfalse
+         setproperty Qname(PackageNamespace(""),"isEnabled")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("starling.display"),"Image")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "fb_icon"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         constructprop Qname(PackageNamespace("starling.display"),"Image") 1
+         coerce Qname(PackageNamespace("starling.display"),"Image")
+         dup
+         setlocal 13
+         pushstring "none"
+         setproperty Qname(PackageNamespace(""),"smoothing")
+         getlocal 13
+         getlocal 13
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-2Tc") 0
+         dup
+         setlocal 17
+         setproperty Qname(PackageNamespace(""),"scaleY")
+         getlocal 17
+         setproperty Qname(PackageNamespace(""),"scaleX")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         findpropstrict Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd")
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-48o")
+         callproperty Qname(StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3Gd") 2
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 14
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-l-")
+         constructprop Qname(PackageNamespace("_-1la"),"_-l-") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-l-")
+         dup
+         setlocal 5
+         pushstring "center"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal 5
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 14
+         getlocal 5
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getlocal 14
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "${login.environment.create.account}"
+         pushstring "LABEL_LINK_LARGE"
+         callproperty Qname(PackageNamespace(""),"_-0yn") 2
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 12
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0qF")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal 12
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "shop_list_main_disabled"
+         callproperty Qname(PackageNamespace(""),"_-1RG") 1
+         callproperty Qname(PackageNamespace(""),"createScale9Image") 1
+         setproperty Qname(PackageNamespace(""),"backgroundSkin")
+         getlocal 12
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"padding")
+         getlocal 14
+         getlocal 12
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         pushtrue
+         findproperty Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-0oh")
+         swap
+         setproperty Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-0oh")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-a§(param1:GestureEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-a")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-4Sp"),"GestureEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override protected function onBackButtonTriggered(param1:Event) : void
+      {
+         trait method Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"onBackButtonTriggered")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         callpropvoid Qname(PackageNamespace(""),"showEnvironmentSelect") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override protected function onAddedToStage(param1:Event) : void
+      {
+         trait method Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"onAddedToStage")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace(""),"_-4Jq")
+         callpropvoid Qname(PackageNamespace(""),"_-4Jq") 0
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1rS")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-1rS") 0
+         getlex Qname(PackageNamespace("_-3A1"),"_-dE")
+         pushstring "autologin"
+         callproperty Qname(PackageNamespace(""),"_-2dp") 1
+         convert_b
+         setlocal_2
+         getlocal_2
+         dup
+         iffalse ofs002a
+         pop
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"password")
+         coerce_a
+         ofs002a:iffalse ofs003d
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"password")
+         setproperty Qname(PackageNamespace(""),"text")
+         jump ofs0044
+         ofs003d:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         pushstring ""
+         setproperty Qname(PackageNamespace(""),"text")
+         ofs0044:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         iffalse ofs005d
+         findpropstrict Qname(PackageNamespace(""),"_-20U")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         callpropvoid Qname(PackageNamespace(""),"_-20U") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-26f")
+         ofs005d:getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"tracking")
+         pushstring "Application"
+         pushstring "OPEN_VIEW"
+         pushstring "Login"
+         callpropvoid Qname(Namespace("com.sulake.habbo.tracking:IHabboTracking"),"trackGoogle") 3
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4ZI§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4ZI")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         callpropvoid Qname(PackageNamespace(""),"_-30S") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-es§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-es")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         callpropvoid Qname(PackageNamespace(""),"_-30S") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         callpropvoid Qname(PackageNamespace(""),"_-30S") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0qF§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0qF")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce Qname(PackageNamespace("starling.events"),"Touch")
+         setlocal_2
+         getlocal_2
+         dup
+         iffalse ofs0020
+         pop
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         equals
+         coerce_a
+         ofs0020:iffalse ofs002d
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"showTOS") 1
+         ofs002d:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2kE§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2kE")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce Qname(PackageNamespace("starling.events"),"Touch")
+         setlocal_2
+         getlocal_2
+         dup
+         iffalse ofs0020
+         pop
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         equals
+         coerce_a
+         ofs0020:iffalse ofs002c
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         callpropvoid Qname(PackageNamespace(""),"showResetPassword") 0
+         ofs002c:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0Ry§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ry")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         callpropvoid Qname(PackageNamespace(""),"showEnvironmentSelect") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2CQ§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2CQ")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 5
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         getproperty Qname(PackageNamespace(""),"text")
+         coerce_s
+         setlocal_3
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43c")
+         getproperty Qname(PackageNamespace(""),"text")
+         coerce_s
+         setlocal_2
+         getlocal_3
+         pushstring ""
+         equals
+         dup
+         iftrue ofs0021
+         pop
+         getlocal_2
+         pushstring ""
+         equals
+         ofs0021:iffalse ofs004f
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.missing_credentials"
+         pushstring "connection.login.missing_credentials"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushfalse
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs005f
+         ofs004f:getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         getlocal_3
+         getlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2nE")
+         getproperty Qname(PackageNamespace(""),"isSelected")
+         callpropvoid Qname(PackageNamespace(""),"tryLogin") 3
+         ofs005f:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2et§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2et")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 5
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 4
+         pushstring "HabboFacebookAIR"
+         coerce_s
+         setlocal_3
+         pushstring "HabboFacebookAIR"
+         coerce_s
+         setlocal_2
+         getlocal_3
+         pushstring ""
+         equals
+         dup
+         iftrue ofs001f
+         pop
+         getlocal_2
+         pushstring ""
+         equals
+         ofs001f:iffalse ofs004d
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.missing_credentials"
+         pushstring "connection.login.missing_credentials"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 2
+         coerce_s
+         setlocal 4
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv")
+         getlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Ym")
+         pushstring "up"
+         pushfalse
+         pushtrue
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4gv") 5
+         jump ofs0058
+         ofs004d:getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         getlocal_3
+         getlocal_2
+         pushfalse
+         callpropvoid Qname(PackageNamespace(""),"tryLogin") 3
+         ofs0058:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0oR§(param1:§_-00P§) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0oR")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-2bm"),"_-00P")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 12
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 10
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-l-")
+         constructprop Qname(PackageNamespace("_-1la"),"_-l-") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-l-")
+         setlocal_2
+         getlocal_2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"padding")
+         getlocal_2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal_2
+         pushstring "center"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal 10
+         getlocal_2
+         setproperty Qname(PackageNamespace(""),"layout")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 11
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "LABEL_M_LIGHT_BLUE"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 11
+         pushstring "${connection.login.facebook}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 10
+         getlocal 11
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-2UZ") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-2UZ")
+         dup
+         setlocal 6
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-3FO")
+         getproperty Qname(PackageNamespace(""),"width")
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal 6
+         getproperty Qname(PackageNamespace(""),"textRendererProperties")
+         pushtrue
+         setproperty Multiname("wordWrap",[PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         callproperty Qname(PackageNamespace(""),"getFBName") 0
+         coerce_s
+         setlocal 7
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.facebook.desc"
+         pushstring "name"
+         getlocal 7
+         callpropvoid Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"registerParameter") 3
+         getlocal 6
+         pushstring "${connection.login.facebook.desc}"
+         setproperty Qname(PackageNamespace(""),"text")
+         getlocal 10
+         getlocal 6
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal 4
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-1H2")
+         constructprop Qname(PackageNamespace("_-1la"),"_-1H2") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-1H2")
+         dup
+         setlocal 5
+         getlex Qname(PackageNamespace("_-1Pm"),"_-lp")
+         getproperty Qname(PackageNamespace(""),"_-3Kv")
+         setproperty Qname(PackageNamespace(""),"gap")
+         getlocal 5
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-3ef")
+         getlocal 5
+         pushstring "middle"
+         setproperty Qname(PackageNamespace(""),"verticalAlign")
+         getlocal 4
+         getlocal 5
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlocal 10
+         getlocal 4
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"Button")
+         constructprop Qname(PackageNamespace("_-2T5"),"Button") 0
+         coerce Qname(PackageNamespace("_-2T5"),"Button")
+         setlocal_3
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-blue-button"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_3
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0m6")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_3
+         pushstring "${connection.logout.facebook}"
+         setproperty Qname(PackageNamespace(""),"label")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-a6")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-a6") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-a6")
+         dup
+         setlocal 8
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "fb_icon"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         setproperty Qname(PackageNamespace(""),"source")
+         getlocal_3
+         getlocal 8
+         setproperty Qname(PackageNamespace(""),"defaultIcon")
+         getlocal 4
+         getlocal_3
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"Button")
+         constructprop Qname(PackageNamespace("_-2T5"),"Button") 0
+         coerce Qname(PackageNamespace("_-2T5"),"Button")
+         dup
+         setlocal 9
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-blue-button"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal 9
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-H4")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal 7
+         pushnull
+         ifeq ofs0152
+         getlocal 7
+         pushstring " "
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"split") 1
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),StaticProtectedNs("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),StaticProtectedNs("feathers.controls:ScrollScreen"),StaticProtectedNs("feathers.controls:ScrollContainer"),StaticProtectedNs("feathers.controls:Scroller"),StaticProtectedNs("feathers.core:FeathersControl"),StaticProtectedNs("starling.display:Sprite"),StaticProtectedNs("starling.display:DisplayObjectContainer"),StaticProtectedNs("starling.display:DisplayObject"),StaticProtectedNs("starling.events:EventDispatcher"),StaticProtectedNs("Object"),PackageNamespace("_-1Pm"),PackageNamespace("_-1md"),PackageInternalNs("_-1md"),PrivateNamespace("FilePrivateNS:LoginScreen"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         jump ofs0155
+         ofs0152:pushstring ""
+         coerce_a
+         ofs0155:coerce_s
+         setlocal 7
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getproperty Qname(PackageNamespace(""),"localizationManager")
+         pushstring "connection.login.facebook.asuser"
+         pushstring "name"
+         getlocal 7
+         callpropvoid Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"registerParameter") 3
+         getlocal 9
+         pushstring "${connection.login.facebook.asuser}"
+         setproperty Qname(PackageNamespace(""),"label")
+         getlocal 4
+         getlocal 9
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         dup
+         iffalse ofs0189
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         getproperty Qname(PackageNamespace(""),"stage")
+         coerce_a
+         ofs0189:iffalse ofs01a4
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal 10
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-482")
+         pushstring "up"
+         pushfalse
+         callproperty Qname(PackageNamespace(""),"show") 4
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         ofs01a4:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-H4§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-H4")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"close") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_-15k")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         callproperty Qname(PackageNamespace(""),"getAccessToken") 0
+         callpropvoid Qname(PackageNamespace(""),"sendFacebookAccessToken") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0m6§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0m6")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"close") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Dg")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getproperty Qname(PackageNamespace(""),"fbLoginHelper")
+         callpropvoid Qname(PackageNamespace(""),"closeSession") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4RR§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-4RR")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"close") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         pushstring "url.prefix"
+         callproperty Qname(PackageNamespace(""),"getProperty") 1
+         coerce_s
+         setlocal_2
+         getlex Qname(PackageNamespace("flash.net"),"navigateToURL")
+         getglobalscope
+         findpropstrict Qname(PackageNamespace("flash.net"),"URLRequest")
+         getlocal_2
+         constructprop Qname(PackageNamespace("flash.net"),"URLRequest") 1
+         call 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2UW§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-2UW")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         pushnull
+         ifeq ofs001a
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"close") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-43X")
+         ofs001a:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Pc")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Pc") 0
+         findpropstrict Qname(PackageNamespace("_-1Pm"),"_-2Y2")
+         getlocal_0
+         constructprop Qname(PackageNamespace("_-1Pm"),"_-2Y2") 1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0Pc§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Pc")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         iffalse ofs0017
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-Ug")
+         ofs0017:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-bX§() : void
+      {
+         trait method Qname(PackageNamespace(""),"_-bX")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Pc")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view.screen:LoginScreen"),"_-0Pc") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function getProperty(param1:String, param2:Dictionary = null) : String
+      {
+         trait method Qname(PackageNamespace(""),"getProperty")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace(""),"String")
+         param Qname(PackageNamespace("flash.utils"),"Dictionary")
+         optional null
+         returns Qname(PackageNamespace(""),"String")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         iffalse ofs0016
+         getlex Qname(ProtectedNamespace("com.sulake.habbo.communication.demo.view.screen:LoginFlowScreenBase"),"_controller")
+         getlocal_1
+         getlocal_2
+         callproperty Qname(PackageNamespace(""),"getProperty") 2
+         jump ofs0019
+         ofs0016:pushstring ""
+         coerce_s
+         ofs0019:returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

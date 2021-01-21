@@ -1,0 +1,2248 @@
+package §_-3RA§
+{
+   import §_-05d§.§_-00n§;
+   import §_-05d§.§_-3fJ§;
+   import §_-05d§.§_-Ps§;
+   import §_-05d§.§_-hp§;
+   import §_-0Jq§.§_-0NB§;
+   import §_-0Jq§.§_-zb§;
+   import §_-0u3§.§_-Dn§;
+   import §_-0u3§.§_-OH§;
+   import §_-1la§.§_-1H2§;
+   import §_-1la§.§_-4Pn§;
+   import §_-1tx§.§_-06B§;
+   import §_-2T5§.LayoutGroup;
+   import §_-2T5§.§_-0mH§;
+   import §_-2T5§.§_-11E§;
+   import §_-2T5§.§_-3-o§;
+   import §_-2T5§.§_-a6§;
+   import §_-2T5§.§_-eo§;
+   import §_-3CR§.§_-1qS§;
+   import §_-3CR§.§_-27Y§;
+   import §_-4Sp§.GestureEvent;
+   import §_-Dk§.§_-2u6§;
+   import §_-Dk§.§_-4jI§;
+   import §_-pM§.§_-7C§;
+   import §_-va§.§_-0La§;
+   import flash.utils.setTimeout;
+   import starling.core.Starling;
+   import starling.display.Button;
+   import starling.display.Quad;
+   import starling.events.Event;
+   import starling.events.Touch;
+   import starling.events.TouchEvent;
+   import starling.textures.Texture;
+   
+   public class §_-3t7§
+   {
+      
+      private static const §_-4UC§:int = 800;
+      
+      private static const §_-24w§:int = 0;
+      
+      private static const §_-0EO§:int = 1;
+      
+      private static const §_-1cp§:String = "speak";
+      
+      private static const §_-1FO§:String = "shout";
+      
+      private static const §_-1D5§:String = "whisper";
+      
+      private static var §_-3KZ§:Boolean;
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 0
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 0
+         
+         code
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var §_-4Ri§:§_-0La§;
+      
+      private var §_-0JI§:LayoutGroup;
+      
+      private var §_-0eE§:LayoutGroup;
+      
+      private var §_-4RW§:§_-U§;
+      
+      private var §_-aU§:starling.display.Button;
+      
+      private var §_-3lT§:§_-eo§;
+      
+      private var §_-3fx§:§_-0mH§;
+      
+      private var §_-0ww§:§_-06B§;
+      
+      private var §_-2Rs§:§_-3-o§;
+      
+      private var §_-2rl§:§_-OH§;
+      
+      private var §_-1FX§:§_-a6§;
+      
+      private var §_-3qp§:Quad;
+      
+      private var _state:int = -1;
+      
+      private var §_-2XU§:Array;
+      
+      private var §_-A1§:Boolean;
+      
+      private var _disposed:Boolean;
+      
+      private var §_-3fM§:§_-2T5§.Button;
+      
+      public function §_-3t7§(param1:§_-0La§)
+      {
+         method
+         name null
+         param Qname(PackageNamespace("_-va"),"_-0La")
+         returns null
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         constructsuper 0
+         getlocal_1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         findpropstrict Qname(PackageNamespace("_-3RA"),"_-U")
+         getlocal_1
+         constructprop Qname(PackageNamespace("_-3RA"),"_-U") 1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         newarray 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-4Em") 0
+         not
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KZ")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KZ")
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2oM")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2oM") 0
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"createView")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"createView") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         pushstring "resize"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"onResize")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         iffalse ofs0026
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         ofs0026:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         iffalse ofs0067
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-009")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "softKeyboardActivate"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-46b")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "softKeyboardDeactivate"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Hk")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         ofs0067:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         iffalse ofs0082
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         ofs0082:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         iffalse ofs009d
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         ofs009d:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         iffalse ofs00b4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"close") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         ofs00b4:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         iffalse ofs00ca
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         callpropvoid Qname(PackageNamespace(""),"removeAll") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         ofs00ca:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         iffalse ofs00e5
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         ofs00e5:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         iffalse ofs00fa
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         ofs00fa:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         iffalse ofs0127
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callproperty Qname(PackageNamespace(""),"_-3HU") 1
+         iffalse ofs0119
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callpropvoid Qname(PackageNamespace(""),"_-08-") 1
+         ofs0119:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         ofs0127:pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         pushtrue
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get view() : §_-0NB§
+      {
+         trait getter Qname(PackageNamespace(""),"view")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace("_-0Jq"),"_-0NB")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set visible(param1:Boolean) : void
+      {
+         trait setter Qname(PackageNamespace(""),"visible")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace(""),"Boolean")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         iffalse ofs000a
+         returnvoid
+         ofs000a:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         getlocal_1
+         setproperty Qname(PackageNamespace(""),"visible")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-4RO§(param1:String) : void
+      {
+         trait method Qname(PackageNamespace(""),"_-4RO")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace(""),"String")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 7
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushbyte 0
+         setlocal 6
+         pushnull
+         setlocal 5
+         pushbyte 0
+         setlocal_2
+         pushbyte 0
+         setlocal 4
+         pushnull
+         setlocal_3
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         getlocal_1
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"indexOf") 1
+         pushbyte -1
+         ifeq ofs0020
+         returnvoid
+         ofs0020:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         getlocal_1
+         callpropvoid Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"push") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         getproperty Qname(PackageNamespace(""),"length")
+         pushbyte 5
+         ifngt ofs0039
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         callpropvoid Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"shift") 0
+         ofs0039:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         iffalse ofs0092
+         pushbyte 0
+         setlocal 6
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-30K")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-30K") 0
+         coerce Qname(PackageNamespace("_-1tx"),"_-06B")
+         setlocal 5
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getlocal 5
+         setproperty Qname(PackageNamespace(""),"dataProvider")
+         getlocal 5
+         getproperty Qname(PackageNamespace(""),"length")
+         convert_i
+         setlocal_2
+         pushbyte 0
+         setlocal 4
+         jump ofs0084
+         ofs0064:label
+         getlocal 5
+         getlocal 4
+         callproperty Qname(PackageNamespace(""),"getItemAt") 1
+         coerce Qname(PackageNamespace(""),"Object")
+         setlocal_3
+         getlocal_3
+         getproperty Multiname("target",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlocal_1
+         ifne ofs0082
+         getlocal 4
+         setlocal 6
+         jump ofs008b
+         ofs0082:inclocal_i 4
+         ofs0084:getlocal 4
+         getlocal_2
+         iflt ofs0064
+         ofs008b:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getlocal 6
+         setproperty Qname(PackageNamespace(""),"selectedIndex")
+         ofs0092:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function createView() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"createView")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-33b")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-33b") 0
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-wQ")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-wQ") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-33b§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-33b")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 9
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         pushstring "initialize"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2-J")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 500
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         setlocal 4
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "toolbar_chatinput_button"
+         callproperty Qname(PackageNamespace(""),"getTexture") 1
+         coerce Qname(PackageNamespace("starling.textures"),"Texture")
+         setlocal_3
+         findpropstrict Qname(PackageNamespace("starling.display"),"Button")
+         getlocal_3
+         constructprop Qname(PackageNamespace("starling.display"),"Button") 1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3rf")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-2Tc") 0
+         dup
+         setlocal 8
+         setproperty Qname(PackageNamespace(""),"scaleY")
+         getlocal 8
+         setproperty Qname(PackageNamespace(""),"scaleX")
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-eo")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-eo") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-eo")
+         setlocal_1
+         getlocal_1
+         pushfalse
+         setproperty Qname(PackageNamespace(""),"_-1BV")
+         getlocal_1
+         pushstring "${just.say.hi}"
+         setproperty Qname(PackageNamespace(""),"prompt")
+         getlocal_1
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3rf")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "toolbar_chatinput"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         getproperty Qname(PackageNamespace(""),"height")
+         setproperty Qname(PackageNamespace(""),"height")
+         getlocal_1
+         getlocal 4
+         setproperty Qname(PackageNamespace(""),"width")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         getlocal_1
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         constructprop Qname(PackageNamespace("_-2T5"),"LayoutGroup") 0
+         coerce Qname(PackageNamespace("_-2T5"),"LayoutGroup")
+         setlocal_2
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-1H2")
+         constructprop Qname(PackageNamespace("_-1la"),"_-1H2") 0
+         coerce Qname(PackageNamespace("_-1la"),"_-1H2")
+         dup
+         setlocal 7
+         pushstring "right"
+         setproperty Qname(PackageNamespace(""),"horizontalAlign")
+         getlocal_2
+         getlocal 7
+         setproperty Qname(PackageNamespace(""),"layout")
+         getlocal_2
+         getlocal 4
+         setproperty Qname(PackageNamespace(""),"width")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0JI")
+         getlocal_2
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-Dk"),"_-2u6")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         constructprop Qname(PackageNamespace("_-Dk"),"_-2u6") 1
+         coerce Qname(PackageNamespace("_-Dk"),"_-2u6")
+         dup
+         setlocal 5
+         pushshort 800
+         setproperty Qname(PackageNamespace(""),"if ")
+         getlocal 5
+         pushstring "gestureBegan"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-a")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 5
+         findpropstrict Qname(PackageNamespace("_-Dk"),"_-4jI")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-aU")
+         constructprop Qname(PackageNamespace("_-Dk"),"_-4jI") 1
+         coerce Qname(PackageNamespace("_-Dk"),"_-4jI")
+         dup
+         setlocal 6
+         pushbyte 4
+         setproperty Qname(PackageNamespace(""),"direction")
+         getlocal 6
+         pushstring "gestureRecognized"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-9F")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-wQ§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-wQ")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 8
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("_-3CR"),"_-1qS")
+         callproperty Qname(PackageNamespace(""),"_-4Pq") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 20
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         setlocal_1
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         pushstring "chat_history"
+         callproperty Qname(PackageNamespace(""),"_-1EG") 1
+         coerce Qname(PackageNamespace("_-2T5"),"_-a6")
+         setlocal_2
+         getlocal_2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 150
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"_-3nI")
+         getlocal_2
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-41x")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_2
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         pushnan
+         pushnan
+         pushnan
+         pushbyte 0
+         pushnan
+         pushbyte 0
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 6
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlocal_2
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-a6")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-a6") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2zH")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 150
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"_-3nI")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 150
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"_-0Yg")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getlex Qname(PackageNamespace("_-3CR"),"_-27Y")
+         getlocal_1
+         getlocal_2
+         pushbyte 0
+         callproperty Qname(PackageNamespace(""),"_-0k8") 3
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         pushbyte 55
+         setproperty Qname(PackageNamespace(""),"width")
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0m")
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-26c")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-26c") 0
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0m") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-0mH")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-0mH") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-30K")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-30K") 0
+         setproperty Qname(PackageNamespace(""),"dataProvider")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushbyte 0
+         setproperty Qname(PackageNamespace(""),"selectedIndex")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-chat-picker"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushstring "alternate-no-border-picker-list"
+         setproperty Qname(PackageNamespace(""),"_-1Wq")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushstring "alternate-secondary-picker"
+         setproperty Qname(PackageNamespace(""),"_-3LS")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushstring "change"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-BC")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushstring "scroll"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-BC")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         pushstring "open"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-BC")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getlex Qname(PackageNamespace("_-3CR"),"_-27Y")
+         getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         pushbyte 0
+         callproperty Qname(PackageNamespace(""),"_-0k8") 3
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"Button")
+         constructprop Qname(PackageNamespace("_-2T5"),"Button") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         pushstring "${send}"
+         setproperty Qname(PackageNamespace(""),"label")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         pushstring "triggered"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-12Q")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         findpropstrict Qname(PackageNamespace("_-1la"),"_-4Pn")
+         pushnan
+         pushbyte 3
+         pushnan
+         pushnan
+         pushnan
+         pushbyte 0
+         constructprop Qname(PackageNamespace("_-1la"),"_-4Pn") 6
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-eo")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-eo") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-1BV")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"isFocusEnabled")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushshort 150
+         setproperty Qname(PackageNamespace(""),"maxChars")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "enter"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-009")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "softKeyboardActivate"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-46b")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-chat-input"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getlex Qname(PackageNamespace("_-3CR"),"_-27Y")
+         getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fM")
+         pushbyte 0
+         callproperty Qname(PackageNamespace(""),"_-2g-") 4
+         setproperty Qname(PackageNamespace(""),"layoutData")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"_-2Pq")
+         pushfalse
+         setproperty Multiname("multiline",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"_-2Pq")
+         pushstring "go"
+         setproperty Multiname("returnKeyLabel",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-4Em") 0
+         iffalse ofs020e
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring "softKeyboardDeactivate"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Hk")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         ofs020e:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callpropvoid Qname(PackageNamespace(""),"validate") 0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         pushstring "resize"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"onResize")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"onResize")
+         pushnull
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"onResize") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2-J§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2-J")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         iftrue ofs000a
+         returnvoid
+         ofs000a:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onResize(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"onResize")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 6
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-12T") 0
+         convert_i
+         dup
+         setlocal 4
+         pushbyte 2
+         ifne ofs001f
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd") 0
+         jump ofs0028
+         ofs001f:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd") 0
+         ofs0028:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 100
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         setlocal_3
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 2000
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         setlocal 5
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageWidth")
+         convert_i
+         setlocal_2
+         getlocal_2
+         getlocal 5
+         pushbyte 2
+         getlocal_3
+         multiply
+         add
+         ifngt ofs0069
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlocal 5
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal_2
+         getlocal 5
+         subtract
+         pushbyte 2
+         getlocal_3
+         multiply
+         subtract
+         convert_i
+         setlocal_3
+         jump ofs0075
+         ofs0069:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlocal_2
+         pushbyte 2
+         getlocal_3
+         multiply
+         subtract
+         convert_i
+         setproperty Qname(PackageNamespace(""),"width")
+         ofs0075:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlocal_3
+         setproperty Qname(PackageNamespace(""),"x")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-3rf§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3rf")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 4
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce Qname(PackageNamespace("starling.events"),"Touch")
+         setlocal_3
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"ctrlKey")
+         dup
+         iftrue ofs001f
+         pop
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"shiftKey")
+         convert_b
+         ofs001f:convert_b
+         setlocal_2
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         ifne ofs0046
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-A1")
+         iffalse ofs003c
+         pushfalse
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-A1")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-A1")
+         returnvoid
+         ofs003c:findpropstrict Qname(PackageNamespace(""),"_-3rL")
+         getlocal_2
+         callpropvoid Qname(PackageNamespace(""),"_-3rL") 1
+         ofs0046:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-12Q§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-12Q")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KR")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KR") 0
+         iffalse ofs0021
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx") 0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"nativeStage")
+         pushnull
+         setproperty Qname(PackageNamespace(""),"focus")
+         ofs0021:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-41x§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-41x")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         ifne ofs001d
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es") 0
+         ofs001d:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-a§(param1:GestureEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-a")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-4Sp"),"GestureEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-9F§(param1:GestureEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-9F")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-4Sp"),"GestureEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-46b§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-46b")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushbyte 0
+         setlocal_2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Qname(PackageNamespace(""),"_-4Em") 0
+         iftrue ofs0034
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"nativeStage")
+         getproperty Qname(PackageNamespace(""),"softKeyboardRect")
+         getproperty Qname(PackageNamespace(""),"height")
+         convert_i
+         setlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageHeight")
+         getlocal_2
+         subtract
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getproperty Qname(PackageNamespace(""),"height")
+         subtract
+         setproperty Qname(PackageNamespace(""),"y")
+         ofs0034:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4Hk§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Hk")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-009")
+         getlocal_1
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-009") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0Es§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0Es")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         not
+         dup
+         iftrue ofs0013
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"desktop")
+         not
+         ofs0013:iffalse ofs0018
+         returnvoid
+         ofs0018:pushtrue
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-A1")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-A1")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"desktop")
+         callpropvoid Qname(PackageNamespace(""),"_-46V") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2zH§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2zH")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         ifne ofs001f
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0yY")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0yY") 0
+         ofs001f:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-BC§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-BC")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-009§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-009")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KR")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KR") 0
+         iffalse ofs0029
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KZ")
+         iftrue ofs0029
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx") 0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"nativeStage")
+         pushnull
+         setproperty Qname(PackageNamespace(""),"focus")
+         ofs0029:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-3rL§(param1:Boolean = false) : void
+      {
+         trait method Qname(PackageNamespace(""),"_-3rL")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace(""),"Boolean")
+         optional false
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushbyte 0
+         setlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         dup
+         iftrue ofs0014
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         pushbyte 1
+         equals
+         ofs0014:iffalse ofs0019
+         returnvoid
+         ofs0019:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         callpropvoid Qname(PackageNamespace(""),"_-2RH") 0
+         getlocal_1
+         iffalse ofs0035
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd") 0
+         jump ofs0054
+         ofs0035:getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"nativeStage")
+         getproperty Qname(PackageNamespace(""),"softKeyboardRect")
+         getproperty Qname(PackageNamespace(""),"height")
+         convert_i
+         setlocal_2
+         getlocal_2
+         pushbyte 0
+         ifne ofs0054
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd") 0
+         ofs0054:pushbyte 1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callproperty Qname(PackageNamespace(""),"_-3HU") 1
+         iftrue ofs007b
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         pushtrue
+         pushfalse
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2lV")
+         callpropvoid Qname(PackageNamespace(""),"_-3oz") 4
+         ofs007b:getlex Qname(PackageNamespace("flash.utils"),"setTimeout")
+         getglobalscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU")
+         pushbyte 100
+         call 2
+         pop
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-1Mx§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         dup
+         iftrue ofs0011
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         pushbyte 0
+         equals
+         ofs0011:iffalse ofs0016
+         returnvoid
+         ofs0016:pushbyte 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         iffalse ofs003e
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callproperty Qname(PackageNamespace(""),"_-3HU") 1
+         iffalse ofs003e
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         callpropvoid Qname(PackageNamespace(""),"_-08-") 1
+         ofs003e:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         callpropvoid Qname(PackageNamespace(""),"_-30S") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"communication")
+         getproperty Qname(Namespace("com.sulake.habbo.communication:IHabboCommunicationManager"),"connection")
+         findpropstrict Qname(PackageNamespace("_-05d"),"_-00n")
+         constructprop Qname(PackageNamespace("_-05d"),"_-00n") 0
+         callpropvoid Qname(Namespace("com.sulake.core.communication.connection:IConnection"),"send") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-1Zd§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Zd")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 160
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         convert_i
+         setlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageHeight")
+         getlocal_1
+         subtract
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0eE")
+         getproperty Qname(PackageNamespace(""),"height")
+         subtract
+         setproperty Qname(PackageNamespace(""),"y")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-VU§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_disposed")
+         dup
+         iftrue ofs0011
+         pop
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_state")
+         pushbyte 0
+         equals
+         ofs0011:iffalse ofs0016
+         returnvoid
+         ofs0016:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"_-042")
+         iftrue ofs0028
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         callpropvoid Qname(PackageNamespace(""),"setFocus") 0
+         ofs0028:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-3KR§() : Boolean
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3KR")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 5
+         localcount 5
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal_2
+         pushnull
+         setlocal_3
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"text")
+         coerce_s
+         setlocal_1
+         getlocal_1
+         dup
+         iffalse ofs001a
+         pop
+         getlocal_1
+         pushstring ""
+         equals
+         not
+         coerce_a
+         ofs001a:iffalse ofs00db
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4RW")
+         getlocal_1
+         callproperty Qname(PackageNamespace(""),"_-3k5") 1
+         iftrue ofs00d2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3fx")
+         getproperty Qname(PackageNamespace(""),"_-yW")
+         coerce Qname(PackageNamespace(""),"Object")
+         setlocal_2
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-26c")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-26c") 0
+         coerce Qname(PackageNamespace("_-0u3"),"_-OH")
+         setlocal_3
+         getlocal_2
+         getproperty Multiname("type",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         setlocal 4
+         jump ofs00b4
+         ofs004c:label
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"communication")
+         getproperty Qname(Namespace("com.sulake.habbo.communication:IHabboCommunicationManager"),"connection")
+         findpropstrict Qname(PackageNamespace("_-05d"),"_-3fJ")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"text")
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"_-4Yc")
+         constructprop Qname(PackageNamespace("_-05d"),"_-3fJ") 2
+         callpropvoid Qname(Namespace("com.sulake.core.communication.connection:IConnection"),"send") 1
+         jump ofs00d2
+         ofs006d:label
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"communication")
+         getproperty Qname(Namespace("com.sulake.habbo.communication:IHabboCommunicationManager"),"connection")
+         findpropstrict Qname(PackageNamespace("_-05d"),"_-Ps")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"text")
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"_-4Yc")
+         constructprop Qname(PackageNamespace("_-05d"),"_-Ps") 2
+         callpropvoid Qname(Namespace("com.sulake.core.communication.connection:IConnection"),"send") 1
+         jump ofs00d2
+         ofs008e:label
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"communication")
+         getproperty Qname(Namespace("com.sulake.habbo.communication:IHabboCommunicationManager"),"connection")
+         findpropstrict Qname(PackageNamespace("_-05d"),"_-hp")
+         getlocal_2
+         getproperty Multiname("target",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         getproperty Qname(PackageNamespace(""),"text")
+         getlocal_3
+         getproperty Qname(PackageNamespace(""),"_-4Yc")
+         constructprop Qname(PackageNamespace("_-05d"),"_-hp") 3
+         callpropvoid Qname(Namespace("com.sulake.core.communication.connection:IConnection"),"send") 1
+         jump ofs00d2
+         ofs00b4:pushstring "speak"
+         getlocal 4
+         ifstricteq ofs004c
+         pushstring "shout"
+         getlocal 4
+         ifstricteq ofs006d
+         pushstring "whisper"
+         getlocal 4
+         ifstricteq ofs008e
+         ofs00d2:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3lT")
+         pushstring ""
+         setproperty Qname(PackageNamespace(""),"text")
+         pushtrue
+         returnvalue
+         ofs00db:pushfalse
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2lV§() : Quad
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2lV")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace("starling.display"),"Quad")
+         
+         body
+         maxstack 4
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         iftrue ofs0024
+         findpropstrict Qname(PackageNamespace("starling.display"),"Quad")
+         pushbyte 4
+         pushbyte 4
+         pushbyte 0
+         constructprop Qname(PackageNamespace("starling.display"),"Quad") 3
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         pushdouble 0.01
+         setproperty Qname(PackageNamespace(""),"alpha")
+         ofs0024:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListeners") 0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         pushstring "touch"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4-f")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3qp")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-4-f§(param1:TouchEvent) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4-f")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"TouchEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"touches")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         coerce Qname(PackageNamespace("starling.events"),"Touch")
+         setlocal_2
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"phase")
+         pushstring "ended"
+         ifne ofs0022
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1Mx") 0
+         ofs0022:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0yY§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0yY")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getproperty Qname(PackageNamespace(""),"stage")
+         iftrue ofs000c
+         returnvoid
+         ofs000c:findpropstrict Qname(PackageNamespace("_-2T5"),"_-11E")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-11E") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-11E")
+         setlocal_1
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "list-grid-layout"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "list-grid-no-square-tiles"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_1
+         pushstring "off"
+         setproperty Qname(PackageNamespace(""),"horizontalScrollPolicy")
+         getlocal_1
+         pushstring "fixed"
+         setproperty Qname(PackageNamespace(""),"scrollBarDisplayMode")
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"itemRendererProperties")
+         pushstring "emptyLabel"
+         setproperty Multiname("labelField",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"itemRendererProperties")
+         pushstring "selectorPreview"
+         setproperty Multiname("iconSourceField",[PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),ProtectedNamespace("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("com.sulake.habbo.chat.input:ChatInput"),StaticProtectedNs("Object"),PackageNamespace("_-3RA"),PackageInternalNs("_-3RA"),PrivateNamespace("FilePrivateNS:ChatInput"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin")])
+         getlocal_1
+         pushstring "change"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3ff")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_1
+         pushstring "scroll"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-BC")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         setproperty Qname(PackageNamespace(""),"dataProvider")
+         getlocal_1
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageWidth")
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushbyte 100
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         subtract
+         setproperty Qname(PackageNamespace(""),"maxWidth")
+         getlocal_1
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushshort 300
+         callproperty Qname(PackageNamespace(""),"_-kn") 1
+         setproperty Qname(PackageNamespace(""),"maxHeight")
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         pushstring "up"
+         pushtrue
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-47e")
+         callproperty Qname(PackageNamespace(""),"show") 5
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         pushstring "removedFromStage"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-t6")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-1zM")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-47e§() : §_-3-o§
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-47e")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace("_-2T5"),"_-3-o")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("_-2T5"),"_-3-o")
+         callproperty Qname(PackageNamespace(""),"_-2Ij") 0
+         coerce Qname(PackageNamespace("_-2T5"),"_-3-o")
+         setlocal_1
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"styleNameList")
+         pushstring "alternate-secondary-callout"
+         callpropvoid Qname(PackageNamespace(""),"add") 1
+         getlocal_1
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-1zM")
+         getlocal_1
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-t6§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-t6")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         iffalse ofs0017
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         ofs0017:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-3ff§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-3ff")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"target")
+         getlex Qname(PackageNamespace("_-2T5"),"_-11E")
+         astypelate
+         coerce Qname(PackageNamespace("_-2T5"),"_-11E")
+         setlocal_2
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0m")
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"_-yW")
+         getlex Qname(PackageNamespace("_-0u3"),"_-OH")
+         astypelate
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0m") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         iffalse ofs002d
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2Rs")
+         callpropvoid Qname(PackageNamespace(""),"close") 0
+         ofs002d:findpropstrict Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU")
+         callpropvoid Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-VU") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-26c§() : §_-OH§
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-26c")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace("_-0u3"),"_-OH")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushbyte 0
+         setlocal_1
+         pushnull
+         setlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         iftrue ofs0067
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         pushbyte 0
+         callproperty Qname(PackageNamespace(""),"getItemAt") 1
+         getlex Qname(PackageNamespace("_-0u3"),"_-OH")
+         astypelate
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         pushbyte 0
+         setlocal_1
+         jump ofs005d
+         ofs0029:label
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getlocal_1
+         callproperty Qname(PackageNamespace(""),"getItemAt") 1
+         getlex Qname(PackageNamespace("_-0u3"),"_-OH")
+         astypelate
+         coerce Qname(PackageNamespace("_-0u3"),"_-OH")
+         setlocal_2
+         getlocal_2
+         getproperty Qname(PackageNamespace(""),"_-4Yc")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"sessionDataManager")
+         getproperty Qname(Namespace("com.sulake.habbo.session:ISessionDataManager"),"_-0q-")
+         ifne ofs005b
+         getlocal_2
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         jump ofs0067
+         ofs005b:inclocal_i 1
+         ofs005d:getlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getproperty Qname(PackageNamespace(""),"length")
+         iflt ofs0029
+         ofs0067:getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-0m§(param1:§_-OH§) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0m")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("_-0u3"),"_-OH")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_1
+         iffalse ofs0018
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"sessionDataManager")
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"_-4Yc")
+         setproperty Qname(Namespace("com.sulake.habbo.session:ISessionDataManager"),"_-0q-")
+         ofs0018:getlocal_1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2rl")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-1FX")
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"selectorPreview")
+         setproperty Qname(PackageNamespace(""),"source")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-30K§() : §_-06B§
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-30K")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace("_-1tx"),"_-06B")
+         
+         body
+         maxstack 7
+         localcount 6
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PackageNamespace("_-1tx"),"_-06B")
+         constructprop Qname(PackageNamespace("_-1tx"),"_-06B") 0
+         coerce Qname(PackageNamespace("_-1tx"),"_-06B")
+         setlocal_2
+         getlocal_2
+         pushstring "label"
+         pushstring "${widgets.chatinput.say}"
+         pushstring "type"
+         pushstring "speak"
+         pushstring "target"
+         pushnull
+         newobject 3
+         callpropvoid Qname(PackageNamespace(""),"addItem") 1
+         getlocal_2
+         pushstring "label"
+         pushstring "${widgets.chatinput.shout}"
+         pushstring "type"
+         pushstring "shout"
+         pushstring "target"
+         pushnull
+         newobject 3
+         callpropvoid Qname(PackageNamespace(""),"addItem") 1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"localization")
+         pushstring "infostand.button.whisper"
+         callproperty Qname(Namespace("com.sulake.core.localization:ICoreLocalizationManager"),"getLocalization") 1
+         coerce_s
+         setlocal_1
+         pushbyte 0
+         setlocal 5
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2XU")
+         setlocal 4
+         jump ofs007c
+         ofs0059:label
+         getlocal 4
+         getlocal 5
+         nextvalue
+         coerce_s
+         setlocal_3
+         getlocal_2
+         pushstring "label"
+         getlocal_1
+         pushstring " "
+         add
+         getlocal_3
+         add
+         pushstring "type"
+         pushstring "whisper"
+         pushstring "target"
+         getlocal_3
+         newobject 3
+         callpropvoid Qname(PackageNamespace(""),"addItem") 1
+         ofs007c:hasnext2 4 5
+         iftrue ofs0059
+         getlocal_2
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-2oM§() : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-2oM")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 11
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         setlocal 8
+         findpropstrict Qname(PackageNamespace("_-1tx"),"_-06B")
+         constructprop Qname(PackageNamespace("_-1tx"),"_-06B") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         pushstring "disabled.custom.chat.styles"
+         callproperty Qname(PackageNamespace(""),"getProperty") 1
+         pushstring ","
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"split") 1
+         coerce Qname(PackageNamespace(""),"Array")
+         setlocal 4
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"_-3v-")
+         getproperty Qname(PackageNamespace(""),"_-0FQ")
+         coerce Qname(PackageNamespace("_-0u3"),"_-Dn")
+         dup
+         setlocal 6
+         callproperty Qname(PackageNamespace(""),"_-18P") 0
+         coerce Qname(PackageNamespace(""),"Array")
+         setlocal_1
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"sessionDataManager")
+         getproperty Qname(Namespace("com.sulake.habbo.session:ISessionDataManager"),"_-1G2")
+         convert_b
+         setlocal 7
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"sessionDataManager")
+         getproperty Qname(Namespace("com.sulake.habbo.session:ISessionDataManager"),"_-0Q9")
+         pushbyte 1
+         greaterequals
+         setlocal_2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-4Ri")
+         getproperty Qname(PackageNamespace(""),"habboUI")
+         getproperty Qname(PackageNamespace(""),"sessionDataManager")
+         pushbyte 4
+         callproperty Qname(Namespace("com.sulake.habbo.session:ISessionDataManager"),"_-2Qt") 1
+         convert_b
+         setlocal_3
+         pushbyte 0
+         setlocal 10
+         getlocal_1
+         setlocal 9
+         jump ofs0114
+         ofs0080:label
+         getlocal 9
+         getlocal 10
+         nextvalue
+         convert_i
+         setlocal 5
+         getlocal 6
+         getlocal 5
+         callproperty Qname(PackageNamespace(""),"_-0Rq") 1
+         coerce Qname(PackageNamespace("_-0u3"),"_-OH")
+         dup
+         setlocal 8
+         getproperty Qname(PackageNamespace(""),"_-1N8")
+         not
+         dup
+         iffalse ofs00b0
+         pop
+         getlocal 4
+         getlocal 5
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"toString") 0
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"indexOf") 1
+         pushbyte -1
+         equals
+         ofs00b0:iffalse ofs00f9
+         getlocal 8
+         getproperty Qname(PackageNamespace(""),"_-3I8")
+         iffalse ofs00d9
+         getlocal 7
+         dup
+         iftrue ofs00c8
+         pop
+         getlocal_3
+         convert_b
+         ofs00c8:iffalse ofs00d5
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getlocal 8
+         callpropvoid Qname(PackageNamespace(""),"push") 1
+         ofs00d5:jump ofs00f5
+         ofs00d9:getlocal 8
+         getproperty Qname(PackageNamespace(""),"_-M9")
+         not
+         dup
+         iftrue ofs00e8
+         pop
+         getlocal_2
+         convert_b
+         ofs00e8:iffalse ofs00f5
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getlocal 8
+         callpropvoid Qname(PackageNamespace(""),"push") 1
+         ofs00f5:jump ofs0114
+         ofs00f9:getlocal 8
+         getproperty Qname(PackageNamespace(""),"_-1iZ")
+         dup
+         iffalse ofs0107
+         pop
+         getlocal_3
+         convert_b
+         ofs0107:iffalse ofs0114
+         getlex Qname(PrivateNamespace("com.sulake.habbo.chat.input:ChatInput"),"_-0ww")
+         getlocal 8
+         callpropvoid Qname(PackageNamespace(""),"push") 1
+         ofs0114:hasnext2 9 10
+         iftrue ofs0080
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

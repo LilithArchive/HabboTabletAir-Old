@@ -1,0 +1,311 @@
+package §_-1Pm§
+{
+   import §_-0Jq§.§_-zb§;
+   import §_-2T5§.LayoutGroup;
+   import §_-2T5§.§_-Et§;
+   import §_-3CR§.§_-0jK§;
+   import starling.core.Starling;
+   import starling.events.Event;
+   
+   public class §_-4X§ extends LayoutGroup
+   {
+      
+      private static const §_-2Cw§:String = "/api/public/captcha";
+      
+      private static const §_-3Ho§:String = "token=";
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 0
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 0
+         
+         code
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var _controller:§_-2yq§;
+      
+      private var §_-2YS§:§_-Et§;
+      
+      public function §_-4X§(param1:§_-2yq§)
+      {
+         method
+         name null
+         param Qname(PackageNamespace("_-1Pm"),"_-2yq")
+         returns null
+         
+         body
+         maxstack 4
+         localcount 4
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         constructsuper 0
+         getlocal_1
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         pushstring "web.api"
+         callproperty Qname(Namespace("com.sulake.habbo.communication.demo.view:ICaptchaListener"),"getProperty") 1
+         pushstring "/api/public/captcha"
+         add
+         coerce_s
+         setlocal_3
+         getlocal_0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageWidth")
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal_0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageHeight")
+         setproperty Qname(PackageNamespace(""),"height")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getproperty Qname(PackageNamespace(""),"_-4WH")
+         pushbyte 4
+         multiply
+         convert_i
+         setlocal_2
+         findpropstrict Qname(PackageNamespace("_-2T5"),"_-Et")
+         constructprop Qname(PackageNamespace("_-2T5"),"_-Et") 0
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getlocal_2
+         setproperty Qname(PackageNamespace(""),"x")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getproperty Qname(PackageNamespace(""),"_-4WH")
+         setproperty Qname(PackageNamespace(""),"y")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageWidth")
+         getlocal_2
+         pushbyte 2
+         multiply
+         subtract
+         setproperty Qname(PackageNamespace(""),"width")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageHeight")
+         getlex Qname(PackageNamespace(""),"HitchTheme")
+         getproperty Qname(PackageNamespace(""),"_-4WH")
+         pushbyte 2
+         multiply
+         subtract
+         setproperty Qname(PackageNamespace(""),"height")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         pushstring "<h1>Instructions</h1>Step 1: Go to <text style=\'background-color:#FFF696\'>habbo.com/api/public/captcha</text><br>Step 2: Complete the Captcha and copy the link address<br>Step 3: Paste the link here:<br<html><body> <input type=\'text\' id=\'txt\'/><input type=\'button\' id=\'btn\' value=\'Submit\'/> <script type=\'text/javascript\'> var newlink=document.getElementById(\'txt\');function redirect (){window.location.href=newlink.value;};document.getElementById(\'btn\').addEventListener(\'click\', redirect);document.getElementById(\'txt\').addEventListener(\'keydown\', function(e){if (e.keyCode==13){redirect();}}, false); </script></body></html>"
+         callpropvoid Qname(PackageNamespace(""),"loadString") 1
+         findpropstrict Qname(PackageNamespace(""),"addChild")
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         getlex Qname(PackageNamespace("_-3CR"),"_-0jK")
+         getlocal_0
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-1jT")
+         callpropvoid Qname(PackageNamespace(""),"_-307") 2
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         pushstring "locationChange"
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-40J")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlocal_0
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"_-3oz") 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlocal_0
+         callproperty Qname(PackageNamespace(""),"_-3HU") 1
+         iffalse ofs001e
+         getlex Qname(PackageNamespace("_-0Jq"),"_-zb")
+         getlocal_0
+         callpropvoid Qname(PackageNamespace(""),"_-08-") 1
+         ofs001e:getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         iffalse ofs0034
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         pushtrue
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 1
+         pushnull
+         findproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         swap
+         setproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         ofs0034:getlocal_0
+         callsupervoid Qname(PackageNamespace(""),"dispose") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-40J§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-40J")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"override")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"override") 0
+         coerce_s
+         setlocal_2
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"type")
+         pushstring "locationChange"
+         equals
+         dup
+         iffalse ofs001c
+         pop
+         getlocal_2
+         pushnull
+         equals
+         not
+         ofs001c:iffalse ofs0029
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         getlocal_2
+         callpropvoid Qname(Namespace("com.sulake.habbo.communication.demo.view:ICaptchaListener"),"_-3rc") 1
+         ofs0029:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function §_-1jT§(param1:Event) : void
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-1jT")
+         dispid 0
+         method
+         name null
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         iffalse ofs0018
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_controller")
+         findpropstrict Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"override")
+         callproperty Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"override") 0
+         callpropvoid Qname(Namespace("com.sulake.habbo.communication.demo.view:ICaptchaListener"),"_-3rc") 1
+         ofs0018:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function override() : String
+      {
+         trait method Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"override")
+         dispid 0
+         method
+         name null
+         returns Qname(PackageNamespace(""),"String")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 0
+         maxscopedepth 1
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PrivateNamespace("com.sulake.habbo.communication.demo.view:WebCaptchaView"),"_-2YS")
+         getproperty Qname(PackageNamespace(""),"location")
+         coerce_s
+         setlocal_1
+         getlocal_1
+         pushnull
+         ifeq ofs001b
+         getlocal_1
+         pushstring "token="
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"indexOf") 1
+         jump ofs001e
+         ofs001b:pushbyte -1
+         coerce_a
+         ofs001e:convert_i
+         setlocal_2
+         getlocal_2
+         pushbyte 0
+         ifnlt ofs0029
+         pushnull
+         returnvalue
+         ofs0029:getlocal_1
+         getlocal_2
+         pushstring "token="
+         getproperty Qname(PackageNamespace(""),"length")
+         add
+         callproperty Qname(Namespace("http://adobe.com/AS3/2006/builtin"),"substr") 1
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

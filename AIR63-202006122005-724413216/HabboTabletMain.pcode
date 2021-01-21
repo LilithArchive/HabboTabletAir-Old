@@ -1,0 +1,2604 @@
+package
+{
+   import §_-0tp§.Stage3DManager;
+   import §_-0tp§.Stage3DProxy;
+   import §_-11h§.§_-49E§;
+   import §_-14T§.§_-1UG§;
+   import §_-15m§.§_-4f2§;
+   import §_-1jS§.CoreComponentContext;
+   import §_-1jS§.§_-1TR§;
+   import §_-1jS§.§_-2CC§;
+   import §_-1jS§.§_-4Sv§;
+   import §_-1wE§.§_-4PF§;
+   import §_-2En§.§_-0ZE§;
+   import §_-2T5§.Alert;
+   import §_-2n9§.§_-3ID§;
+   import §_-2y8§.DeviceCapabilities;
+   import §_-3A1§.§_-dE§;
+   import §_-3GI§.§_-2i3§;
+   import §_-3Lb§.§_-0ol§;
+   import §_-3Lb§.§_-v4§;
+   import §_-3V6§.§_-1PG§;
+   import §_-3qH§.Core;
+   import §_-3yu§.§_-0ek§;
+   import §_-3yu§.§_-1a9§;
+   import §_-3yu§.§_-37U§;
+   import §_-47s§.HabboTracking;
+   import §_-4Ye§.§_-8t§;
+   import §_-4Ye§.§_-kf§;
+   import §_-4bA§.§_-42t§;
+   import §_-T6§.§_-2f3§;
+   import §_-pM§.§_-7C§;
+   import com.mesmotronic.ane.AndroidFullScreen;
+   import com.sulake.iid.IIDCoreLocalizationManager;
+   import com.sulake.iid.IIDHabboCommunicationDemo;
+   import com.sulake.iid.IIDHabboConfigurationManager;
+   import flash.desktop.NativeApplication;
+   import flash.display.Sprite;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.InvokeEvent;
+   import flash.events.KeyboardEvent;
+   import flash.filesystem.File;
+   import flash.system.Capabilities;
+   import flash.system.System;
+   import starling.core.Starling;
+   import starling.display.DisplayObject;
+   import starling.utils.SystemUtil;
+   
+   [SecureSWF(rename="false")]
+   public class HabboTabletMain extends flash.display.Sprite
+   {
+      
+      public static var ubuntu_regular:Class;
+      
+      public static var ubuntu_bold:Class;
+      
+      public static var ubuntu_italic:Class;
+      
+      public static var ubuntu_bold_italic:Class;
+      
+      public static var ubuntu_condensed:Class;
+      
+      private static const LOADING_PROGRESS_STAGE_1:Number = 0.2;
+      
+      private static const LOADING_PROGRESS_STAGE_2:Number = 0.4;
+      
+      private static const LOADING_PROGRESS_STAGE_3:Number = 0.6;
+      
+      private static const LOADING_PROGRESS_STAGE_4:Number = 0.8;
+      
+      private static const LOADING_PROGRESS_STAGE_COMPLETE:Number = 1;
+      
+      private static var _lowMemoryWarnCount:int;
+      
+      {
+         method
+         name ""
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal_0
+         pushscope
+         findproperty Qname(PackageNamespace(""),"ubuntu_regular")
+         getlex Qname(PackageNamespace(""),"Ubuntu-R_ttf$5bae8f5702fc0439bcf0f3af29e9ebd61031082117")
+         setproperty Qname(PackageNamespace(""),"ubuntu_regular")
+         findproperty Qname(PackageNamespace(""),"ubuntu_bold")
+         getlex Qname(PackageNamespace(""),"Ubuntu-B_ttf$d35e24a2b1b31e186299e9bdcee32cb11958698349")
+         setproperty Qname(PackageNamespace(""),"ubuntu_bold")
+         findproperty Qname(PackageNamespace(""),"ubuntu_italic")
+         getlex Qname(PackageNamespace(""),"Ubuntu-I_ttf$204fed506ea928adb0a69b4f44d7c46b20089687")
+         setproperty Qname(PackageNamespace(""),"ubuntu_italic")
+         findproperty Qname(PackageNamespace(""),"ubuntu_bold_italic")
+         getlex Qname(PackageNamespace(""),"Ubuntu-BI_ttf$aab2b25e732344262c9803c521124772897694205")
+         setproperty Qname(PackageNamespace(""),"ubuntu_bold_italic")
+         findproperty Qname(PackageNamespace(""),"ubuntu_condensed")
+         getlex Qname(PackageNamespace(""),"Ubuntu-C_ttf$89fe4d9da3d229c276f2f43670b888e61430458534")
+         setproperty Qname(PackageNamespace(""),"ubuntu_condensed")
+         findproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_1")
+         pushdouble 0.2
+         initproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_1")
+         findproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_2")
+         pushdouble 0.4
+         initproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_2")
+         findproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_3")
+         pushdouble 0.6
+         initproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_3")
+         findproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_4")
+         pushdouble 0.8
+         initproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_4")
+         findproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_COMPLETE")
+         pushbyte 1
+         initproperty Qname(PrivateNamespace(":HabboTabletMain"),"LOADING_PROGRESS_STAGE_COMPLETE")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var CONTEXT_3D_PROFILE:String = "baseline";
+      
+      private var _core:§_-1TR§;
+      
+      private var _preloader:HabboTablet;
+      
+      private var _tracking:HabboTracking;
+      
+      private var _configurationManager:§_-0ZE§;
+      
+      private var _starling:Starling;
+      
+      private var _stage3DManager:Stage3DManager;
+      
+      private var _stage3DProxy:Stage3DProxy;
+      
+      private var _view3D:§_-42t§;
+      
+      private var _theme:HitchTheme;
+      
+      private var _memoryMonitor:§_-4PF§;
+      
+      private var _lowMemoryAlert:Alert;
+      
+      private var _gradientRenderer:§_-2f3§;
+      
+      public function HabboTabletMain()
+      {
+         method
+         name ":HabboTabletMain/HabboTabletMain"
+         returns null
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         constructsuper 0
+         findpropstrict Qname(PackageNamespace(""),"addEventListener")
+         pushstring "addedToStage"
+         getlocal_0
+         getproperty Qname(ProtectedNamespace(":HabboTabletMain"),"onAddedToStage")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         findpropstrict Qname(PackageNamespace(""),"addEventListener")
+         pushstring "complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onCompleteEvent")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "invoke"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"invokeHandler")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private static function receiveQueuedInterface(param1:§_-4Sv§, param2:§_-2CC§) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"receiveQueuedInterface")
+         flag FINAL
+         dispid 3
+         method
+         name "HabboTabletMain/private:receiveQueuedInterface"
+         param Qname(PackageNamespace("_-1jS"),"_-4Sv")
+         param Qname(PackageNamespace("_-1jS"),"_-2CC")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "param2" 1 0
+         getlex Qname(PackageNamespace("_-3Lb"),"_-v4")
+         getlocal_2
+         getlex Qname(PackageNamespace("_-15m"),"_-4f2")
+         astypelate
+         coerce_a
+         setproperty Multiname("localizationManager",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace("_-3Lb"),"_-0ol")
+         getlocal_2
+         getlex Qname(PackageNamespace("_-15m"),"_-4f2")
+         astypelate
+         coerce_a
+         setproperty Multiname("localizationManager",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function invokeHandler(param1:InvokeEvent) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"invokeHandler")
+         dispid 0
+         method
+         name "HabboTabletMain/private:invokeHandler"
+         param Qname(PackageNamespace("flash.events"),"InvokeEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 7
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 120
+         debug 1 "_loc3_" 2 119
+         debug 1 "_loc4_" 3 118
+         pushbyte 0
+         setlocal 4
+         pushundefined
+         coerce_a
+         setlocal_3
+         pushundefined
+         coerce_a
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "InvokeHandler "
+         getlocal_1
+         getproperty Multiname("reason",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         pushstring ". Arguments: "
+         add
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushbyte 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         dup
+         convert_b
+         iffalse ofs005d
+         pop
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs005d:iffalse ofs00bb
+         pushbyte 0
+         setlocal 4
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushbyte 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         coerce_a
+         setlocal_3
+         pushbyte 0
+         setlocal 5
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushbyte 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         coerce_a
+         setlocal 6
+         jump ofs00b0
+         ofs0088:label
+         getlocal 6
+         getlocal 5
+         nextname
+         coerce_a
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "param "
+         getlocal_2
+         add
+         pushstring ": "
+         add
+         getlocal_1
+         getproperty Multiname("arguments",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushbyte 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlocal_2
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         ofs00b0:hasnext2 6 5
+         iftrue ofs0088
+         kill 6
+         kill 5
+         ofs00bb:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         dispid 0
+         method
+         name "HabboTabletMain:dispose"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-1jS"),"_-1TR")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-47s"),"HabboTracking")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_tracking")
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-2En"),"_-0ZE")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_configurationManager")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_theme")
+         iffalse ofs003c
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_theme")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace(""),"HitchTheme")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_theme")
+         ofs003c:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         iffalse ofs0055
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("starling.core"),"Starling")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         ofs0055:getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-0tp"),"Stage3DManager")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         iffalse ofs0078
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-0tp"),"Stage3DProxy")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         ofs0078:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         iffalse ofs0092
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-4bA"),"_-42t")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         ofs0092:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         iffalse ofs00b4
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-2T5"),"Alert")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         ofs00b4:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         getproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         iffalse ofs00d1
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         getproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callpropvoid Multiname("dispose",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         pushnull
+         coerce_a
+         setproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs00d1:getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "keyDown"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onKeyDown")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "deactivate"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationDeactivated")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "activate"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationActivated")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function onAddedToStage(param1:flash.events.Event = null) : void
+      {
+         trait method Qname(ProtectedNamespace(":HabboTabletMain"),"onAddedToStage")
+         dispid 0
+         method
+         name "HabboTabletMain/protected:onAddedToStage"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("flash.events"),"Event")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 7
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 180
+         debug 1 "_loc3_" 2 178
+         debug 1 "_loc4_" 3 181
+         debug 1 "_loc5_" 4 179
+         debug 1 "_loc6_" 5 182
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("applicationDescriptor",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         coerce Qname(PackageNamespace(""),"XML")
+         setlocal_3
+         getlocal_3
+         callproperty Multiname("namespace",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         coerce Qname(PackageNamespace(""),"Namespace")
+         setlocal 5
+         getlocal_3
+         getlocal 5
+         coerce Qname(PackageNamespace(""),"Namespace")
+         getproperty RTQname("copyright")
+         coerce_s
+         setlocal_2
+         getlocal_3
+         getlocal 5
+         coerce Qname(PackageNamespace(""),"Namespace")
+         getproperty RTQname("versionLabel")
+         coerce_s
+         setlocal 4
+         getlocal_3
+         getlocal 5
+         coerce Qname(PackageNamespace(""),"Namespace")
+         getproperty RTQname("versionNumber")
+         coerce_s
+         setlocal 6
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "AIR Runtime version: "
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("runtimeVersion",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application ID: "
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("applicationID",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Copyright: "
+         getlocal_2
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Version: "
+         getlocal 4
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "VersionNumber: "
+         getlocal 6
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application Directory: "
+         getlex Qname(PackageNamespace("flash.filesystem"),"File")
+         getproperty Multiname("applicationDirectory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("nativePath",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application Storage: "
+         getlex Qname(PackageNamespace("flash.filesystem"),"File")
+         getproperty Multiname("applicationStorageDirectory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getproperty Multiname("nativePath",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "OS: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("os",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Architecture: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("cpuArchitecture",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Manufacturer: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("manufacturer",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "PlayerType: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("playerType",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Debug: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("isDebugger",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Language: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("language",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Languages: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("languages",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Pixel Aspect Ratio: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("pixelAspectRatio",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "ScreenDPI: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("screenDPI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "ScreenResX: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("screenResolutionX",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "ScreenResY: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("screenResolutionY",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "ScreenRatio: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("screenResolutionX",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("screenResolutionY",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushbyte 1
+         multiply
+         divide
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "StageWidth: "
+         getlex Qname(PackageNamespace(""),"stage")
+         getproperty Multiname("fullScreenWidth",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "StageHeight: "
+         getlex Qname(PackageNamespace(""),"stage")
+         getproperty Multiname("fullScreenHeight",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "AIR Version: "
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("version",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Using 3D profile: "
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"CONTEXT_3D_PROFILE")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Core version: "
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         getproperty Qname(PackageNamespace(""),"version")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.dpi: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getproperty Qname(PackageNamespace(""),"_-1-Z")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.isPhone: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getlex Qname(PackageNamespace(""),"stage")
+         callproperty Qname(PackageNamespace(""),"_-4OE") 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.isTablet: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getlex Qname(PackageNamespace(""),"stage")
+         callproperty Qname(PackageNamespace(""),"_-0J8") 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.screenInchesX: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getlex Qname(PackageNamespace(""),"stage")
+         callproperty Qname(PackageNamespace(""),"_-Ek") 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.screenInchesY: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getlex Qname(PackageNamespace(""),"stage")
+         callproperty Qname(PackageNamespace(""),"_-3KF") 1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.screenPixelWidth: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getproperty Qname(PackageNamespace(""),"_-3X8")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.screenPixelHeight: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getproperty Qname(PackageNamespace(""),"_-3PD")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "DeviceCapabilities.tabletScreenMinimumInches: "
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         getproperty Qname(PackageNamespace(""),"_-4AN")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"goFullScreen") 0
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"init") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function goFullScreen() : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"goFullScreen")
+         dispid 0
+         method
+         name "HabboTabletMain/private:goFullScreen"
+         flag NEED_ACTIVATION
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 10
+         maxscopedepth 15
+         try from ofs0014 to ofs007d target ofs0081 type Qname(PackageNamespace(""),"Error") name Qname(PackageNamespace(""),"error")
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 221
+         newactivation
+         dup
+         setlocal_1
+         pushscope
+         getscopeobject 1
+         pushnull
+         coerce_a
+         setslot 1
+         ofs0014:getscopeobject 1
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("version",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callproperty Multiname("toLowerCase",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         coerce_a
+         setslot 1
+         getscopeobject 1
+         getslot 1
+         pushstring "and"
+         callproperty Multiname("indexOf",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         pushbyte -1
+         ifngt ofs007c
+         getlex Qname(PackageNamespace("com.mesmotronic.ane"),"AndroidFullScreen")
+         getproperty Qname(PackageNamespace(""),"isSupported")
+         iffalse ofs0071
+         getlex Qname(PackageNamespace("com.mesmotronic.ane"),"AndroidFullScreen")
+         getproperty Qname(PackageNamespace(""),"isImmersiveModeSupported")
+         iffalse ofs0062
+         getlex Qname(PackageNamespace("com.mesmotronic.ane"),"AndroidFullScreen")
+         callpropvoid Qname(PackageNamespace(""),"immersiveMode") 0
+         getlex Qname(PackageNamespace(""),"stage")
+         pushstring "normal"
+         coerce_a
+         setproperty Multiname("displayState",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         jump ofs006d
+         ofs0062:getlex Qname(PackageNamespace(""),"stage")
+         pushstring "fullScreenInteractive"
+         coerce_a
+         setproperty Multiname("displayState",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs006d:jump ofs007c
+         ofs0071:getlex Qname(PackageNamespace(""),"stage")
+         pushstring "fullScreenInteractive"
+         coerce_a
+         setproperty Multiname("displayState",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs007c:returnvoid
+         ofs007d:jump ofs009b
+         ofs0081:getlocal_0
+         pushscope
+         getlocal_1
+         pushscope
+         newcatch 0
+         dup
+         setlocal_2
+         dup
+         pushscope
+         swap
+         setslot 1
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Not Supported on iOS"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         popscope
+         kill 2
+         ofs009b:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function init() : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"init")
+         dispid 0
+         method
+         name "HabboTabletMain/private:init"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 6
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 258
+         debug 1 "_loc2_" 1 260
+         debug 1 "_loc3_" 2 259
+         debug 1 "_loc4_" 3 257
+         debug 1 "NativeWindow" 4 255
+         getlex Qname(PackageNamespace(""),"stage")
+         getproperty Multiname("nativeWindow",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         coerce_a
+         setlocal 5
+         getlocal 5
+         callpropvoid Multiname("maximize",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         pushnull
+         coerce_a
+         setlocal 4
+         pushnull
+         coerce_a
+         setlocal_1
+         pushnull
+         coerce_a
+         setlocal_3
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("version",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callproperty Multiname("toLowerCase",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         coerce_s
+         setlocal_2
+         getlocal_2
+         pushstring "win"
+         callproperty Multiname("indexOf",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         pushbyte -1
+         greaterthan
+         dup
+         iftrue ofs0072
+         pop
+         getlocal_2
+         pushstring "mac"
+         callproperty Multiname("indexOf",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         pushbyte -1
+         greaterthan
+         ofs0072:iffalse ofs007f
+         getlex Qname(PackageNamespace("_-2y8"),"DeviceCapabilities")
+         pushshort 132
+         setproperty Qname(PackageNamespace(""),"_-1-Z")
+         ofs007f:getlex Qname(PackageNamespace(""),"stage")
+         pushstring "resize"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onStageResize")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_0
+         pushdouble 0.2
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"updateLoadingProgressTo") 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         pushnull
+         ifne ofs013f
+         getlocal_0
+         getlex Qname(PackageNamespace("_-0tp"),"Stage3DManager")
+         getlex Qname(PackageNamespace(""),"stage")
+         callproperty Qname(PackageNamespace(""),"getInstance") 1
+         coerce Qname(PackageNamespace("_-0tp"),"Stage3DManager")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         getlocal_0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         pushfalse
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"CONTEXT_3D_PROFILE")
+         callproperty Qname(PackageNamespace(""),"_-1re") 2
+         coerce Qname(PackageNamespace("_-0tp"),"Stage3DProxy")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"profile")
+         pushnull
+         ifne ofs00e7
+         getlocal_0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DManager")
+         pushfalse
+         callproperty Qname(PackageNamespace(""),"_-1re") 1
+         coerce Qname(PackageNamespace("_-0tp"),"Stage3DProxy")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         ofs00e7:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushstring "Context3DCreated"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DCreated")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushstring "Context3DRecreated"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DProxyRecreated")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushstring "Context3DDisposed"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DDisposed")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushstring "error"
+         getlocal_0
+         getproperty Qname(ProtectedNamespace(":HabboTabletMain"),"onStage3DError")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushbyte 0
+         setproperty Qname(PackageNamespace(""),"_-Zi")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"_-1AC")
+         jump ofs0145
+         ofs013f:getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DCreated") 0
+         ofs0145:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onMemoryWarning(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onMemoryWarning")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onMemoryWarning"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace("starling.utils"),"SystemUtil")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onMemoryWarningBufferedCall")
+         callpropvoid Qname(PackageNamespace(""),"executeWhenApplicationIsActive") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onMemoryWarningBufferedCall() : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onMemoryWarningBufferedCall")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onMemoryWarningBufferedCall"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 1
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         iffalse ofs001b
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         callpropvoid Qname(PackageNamespace(""),"removeFromParent") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryAlert")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         ofs001b:findpropstrict Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryWarnCount")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         findpropstrict Qname(PackageNamespace(""),"Number")
+         getlex Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryWarnCount")
+         callproperty Qname(PackageNamespace(""),"Number") 1
+         increment
+         callproperty Qname(PackageNamespace(""),"int") 1
+         callproperty Qname(PackageNamespace(""),"int") 1
+         convert_i
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryWarnCount")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         dup
+         convert_b
+         iffalse ofs004d
+         pop
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs004d:iffalse ofs006a
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         findpropstrict Qname(PackageNamespace("_-3GI"),"_-2i3")
+         getlex Qname(PrivateNamespace(":HabboTabletMain"),"_lowMemoryWarnCount")
+         constructprop Qname(PackageNamespace("_-3GI"),"_-2i3") 1
+         callpropvoid Multiname("dispatchEvent",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         ofs006a:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onAlertClosed(param1:starling.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onAlertClosed")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onAlertClosed"
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"target")
+         getlex Qname(PackageNamespace("_-2T5"),"Alert")
+         astypelate
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onStageResize(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onStageResize")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onStageResize"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 4
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 318
+         debug 1 "_loc3_" 2 319
+         getlex Qname(PackageNamespace(""),"stage")
+         not
+         iffalse ofs0021
+         returnvoid
+         ofs0021:getlex Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageWidth")
+         coerce_a
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"stage")
+         getproperty Qname(PackageNamespace(""),"stageHeight")
+         coerce_a
+         setlocal_3
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         iffalse ofs0054
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         getlocal_2
+         callproperty Qname(PackageNamespace(""),"int") 1
+         convert_i
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         getlocal_3
+         callproperty Qname(PackageNamespace(""),"int") 1
+         convert_i
+         setproperty Qname(PackageNamespace(""),"height")
+         ofs0054:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         iffalse ofs0083
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         findpropstrict Qname(PackageNamespace(""),"Number")
+         findpropstrict Qname(PackageNamespace(""),"Number")
+         getlocal_2
+         callproperty Qname(PackageNamespace(""),"Number") 1
+         callproperty Qname(PackageNamespace(""),"Number") 1
+         convert_d
+         setproperty Qname(PackageNamespace(""),"width")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         findpropstrict Qname(PackageNamespace(""),"Number")
+         findpropstrict Qname(PackageNamespace(""),"Number")
+         getlocal_3
+         callproperty Qname(PackageNamespace(""),"Number") 1
+         callproperty Qname(PackageNamespace(""),"Number") 1
+         convert_d
+         setproperty Qname(PackageNamespace(""),"height")
+         ofs0083:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         iffalse ofs00c8
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"stage")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         getlocal_2
+         callproperty Qname(PackageNamespace(""),"int") 1
+         convert_i
+         setproperty Qname(PackageNamespace(""),"stageWidth")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"stage")
+         findpropstrict Qname(PackageNamespace(""),"int")
+         getlocal_3
+         callproperty Qname(PackageNamespace(""),"int") 1
+         convert_i
+         setproperty Qname(PackageNamespace(""),"stageHeight")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"viewPort")
+         getlocal_2
+         setproperty Multiname("width",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"viewPort")
+         getlocal_3
+         setproperty Multiname("height",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs00c8:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function onStage3DError(param1:ErrorEvent) : void
+      {
+         trait method Qname(ProtectedNamespace(":HabboTabletMain"),"onStage3DError")
+         dispid 0
+         method
+         name "HabboTabletMain/protected:onStage3DError"
+         param Qname(PackageNamespace("flash.events"),"ErrorEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Hello, error!"
+         getlocal_1
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onContext3DDisposed(param1:§_-1UG§ = null) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DDisposed")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onContext3DDisposed"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("_-14T"),"_-1UG")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Context 3d was Disposed!"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onContext3DProxyRecreated(param1:§_-1UG§ = null) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DProxyRecreated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onContext3DProxyRecreated"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("_-14T"),"_-1UG")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Context 3d Proxy was recreated!"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onContext3DCreated(param1:§_-1UG§ = null) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DCreated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onContext3DCreated"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("_-14T"),"_-1UG")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 8
+         localcount 4
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 357
+         debug 1 "_loc3_" 2 356
+         pushnull
+         coerce_a
+         setlocal_3
+         pushnull
+         coerce_a
+         setlocal_2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         pushnull
+         ifne ofs008c
+         getlocal_0
+         findpropstrict Qname(PackageNamespace("_-4bA"),"_-42t")
+         pushnull
+         pushnull
+         pushnull
+         pushfalse
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"CONTEXT_3D_PROFILE")
+         constructprop Qname(PackageNamespace("_-4bA"),"_-42t") 5
+         coerce Qname(PackageNamespace("_-4bA"),"_-42t")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         setproperty Qname(PackageNamespace(""),"stage3DProxy")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"shareContext")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         findpropstrict Qname(PackageNamespace(""),"uint")
+         findpropstrict Qname(PackageNamespace(""),"uint")
+         pushbyte 0
+         callproperty Qname(PackageNamespace(""),"uint") 1
+         callproperty Qname(PackageNamespace(""),"uint") 1
+         convert_u
+         setproperty Qname(PackageNamespace(""),"_-Zi")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         pushfalse
+         coerce_a
+         setproperty Multiname("mouseEnabled",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         pushfalse
+         coerce_a
+         setproperty Multiname("mouseChildren",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace(""),"stage")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         callpropvoid Qname(PackageNamespace(""),"addChild") 1
+         ofs008c:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushnull
+         ifne ofs0199
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         pushfalse
+         setproperty Qname(PackageNamespace(""),"multitouchEnabled")
+         getlex Qname(PackageNamespace("flash.system"),"Capabilities")
+         getproperty Multiname("version",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callproperty Multiname("toLowerCase",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         coerce_a
+         setlocal_3
+         getlocal_3
+         pushstring "and"
+         callproperty Multiname("indexOf",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         pushbyte -1
+         ifngt ofs00c3
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"handleLostContext")
+         jump ofs00c9
+         ofs00c3:getlex Qname(PackageNamespace("starling.core"),"Starling")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"handleLostContext")
+         ofs00c9:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"context3D")
+         getproperty Multiname("profile",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         coerce_a
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Creating Starling with profile "
+         getlocal_2
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         findpropstrict Qname(PackageNamespace("starling.core"),"Starling")
+         getlex Qname(PackageNamespace("starling.display"),"Sprite")
+         getlex Qname(PackageNamespace(""),"stage")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"viewPort")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"stage3D")
+         pushstring "auto"
+         getlocal_2
+         constructprop Qname(PackageNamespace("starling.core"),"Starling") 6
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushfalse
+         setproperty Qname(PackageNamespace(""),"showStats")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushtrue
+         setproperty Qname(PackageNamespace(""),"shareContext")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushfalse
+         setproperty Qname(PackageNamespace(""),"enableErrorChecking")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushstring "context3DCreate"
+         getlocal_0
+         getproperty Qname(ProtectedNamespace(":HabboTabletMain"),"onStarlingContext3DCreated")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Created Starling with \n\tprofile "
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"profile")
+         add
+         pushstring " \n\tshared: "
+         add
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"shareContext")
+         add
+         pushstring " \n\tcontext: "
+         add
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"context")
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace("_-2n9"),"_-3ID")
+         findpropstrict Qname(PackageNamespace("_-11h"),"_-49E")
+         getlex Qname(PackageNamespace(""),"stage")
+         constructprop Qname(PackageNamespace("_-11h"),"_-49E") 1
+         coerce_a
+         setproperty Multiname("_-26P",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace("_-2n9"),"_-3ID")
+         getlex Qname(PackageNamespace("starling.display"),"DisplayObject")
+         findpropstrict Qname(PackageNamespace("_-4Ye"),"_-8t")
+         constructprop Qname(PackageNamespace("_-4Ye"),"_-8t") 0
+         callpropvoid Multiname("_-0XP",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlex Qname(PackageNamespace("_-2n9"),"_-3ID")
+         findpropstrict Qname(PackageNamespace("_-4Ye"),"_-kf")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         constructprop Qname(PackageNamespace("_-4Ye"),"_-kf") 1
+         pushbyte -1
+         callpropvoid Multiname("_-2Eg",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         jump ofs019f
+         ofs0199:getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"onStarlingRootCreated") 0
+         ofs019f:getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"goFullScreen") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function onStarlingContext3DCreated(param1:starling.events.Event) : void
+      {
+         trait method Qname(ProtectedNamespace(":HabboTabletMain"),"onStarlingContext3DCreated")
+         dispid 0
+         method
+         name "HabboTabletMain/protected:onStarlingContext3DCreated"
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushstring "context3DCreate"
+         getlocal_0
+         getproperty Qname(ProtectedNamespace(":HabboTabletMain"),"onStarlingContext3DCreated")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"context")
+         not
+         iffalse ofs0026
+         ofs0026:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getproperty Qname(PackageNamespace(""),"isStarted")
+         not
+         iffalse ofs003d
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         callpropvoid Qname(PackageNamespace(""),"start") 0
+         ofs003d:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushstring "rootCreated"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onStarlingRootCreated")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onContext3DRecreated(param1:starling.events.Event = null) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DRecreated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onContext3DRecreated"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("starling.events"),"Event")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         dup
+         convert_b
+         iffalse ofs001a
+         pop
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         ofs001a:iffalse ofs005d
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"context3D")
+         getproperty Multiname("profile",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushnull
+         equals
+         not
+         dup
+         iftrue ofs0042
+         pop
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"context3D")
+         getproperty Multiname("driverInfo",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushnull
+         equals
+         not
+         ofs0042:iffalse ofs0056
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"context3D")
+         setproperty Qname(PackageNamespace(""),"context")
+         ofs0056:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callpropvoid Multiname("init",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         ofs005d:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onStarlingRootCreated(param1:starling.events.Event = null) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onStarlingRootCreated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onStarlingRootCreated"
+         flag HAS_OPTIONAL
+         param Qname(PackageNamespace("starling.events"),"Event")
+         optional null
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 3
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 444
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callpropvoid Multiname("init",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushstring "rootCreated"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onStarlingRootCreated")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         callproperty Multiname("_-4Em",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         iffalse ofs0073
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "keyDown"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onKeyDown")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 5
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "deactivate"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationDeactivated")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlex Qname(PackageNamespace("flash.desktop"),"NativeApplication")
+         getproperty Multiname("nativeApplication",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "activate"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationActivated")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         ofs0073:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_theme")
+         pushnull
+         ifne ofs0087
+         getlocal_0
+         findpropstrict Qname(PackageNamespace(""),"HitchTheme")
+         constructprop Qname(PackageNamespace(""),"HitchTheme") 0
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_theme")
+         ofs0087:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         not
+         iffalse ofs00b8
+         getlocal_0
+         findpropstrict Qname(PackageNamespace("_-T6"),"_-2f3")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getproperty Qname(PackageNamespace(""),"context3D")
+         constructprop Qname(PackageNamespace("_-T6"),"_-2f3") 1
+         coerce Qname(PackageNamespace("_-T6"),"_-2f3")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         pushint 527374
+         pushint 1318180
+         callpropvoid Qname(PackageNamespace(""),"colors") 2
+         ofs00b8:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         pushstring "context3DCreate"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onContext3DRecreated")
+         callpropvoid Qname(PackageNamespace(""),"addEventListener") 2
+         pushtrue
+         convert_b
+         setlocal_2
+         getlocal_2
+         iffalse ofs00d6
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"prepareCore") 0
+         ofs00d6:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onKeyDown(param1:KeyboardEvent) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onKeyDown")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onKeyDown"
+         param Qname(PackageNamespace("flash.events"),"KeyboardEvent")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_1
+         getproperty Multiname("keyCode",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushint 16777238
+         ifeq ofs0016
+         returnvoid
+         ofs0016:getlocal_1
+         callpropvoid Multiname("preventDefault",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         getlocal_1
+         callpropvoid Multiname("stopImmediatePropagation",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onApplicationDeactivated(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationDeactivated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onApplicationDeactivated"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application deactivated"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onApplicationActivated(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onApplicationActivated")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onApplicationActivated"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application activated"
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         pushnull
+         equals
+         not
+         dup
+         iffalse ofs0029
+         pop
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"context")
+         pushnull
+         equals
+         not
+         ofs0029:iffalse ofs0045
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"context")
+         callpropvoid Multiname("clear",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         getlex Qname(PackageNamespace("starling.core"),"Starling")
+         getproperty Qname(PackageNamespace(""),"current")
+         getproperty Qname(PackageNamespace(""),"context")
+         callpropvoid Multiname("present",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         ofs0045:getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"goFullScreen") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onEnterFrame(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onEnterFrame")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onEnterFrame"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         dup
+         convert_b
+         iffalse ofs001a
+         pop
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         ofs001a:iffalse ofs0039
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         callpropvoid Qname(PackageNamespace(""),"clear") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         callpropvoid Qname(PackageNamespace(""),"nextFrame") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         callpropvoid Qname(PackageNamespace(""),"present") 0
+         ofs0039:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onCachedErrorAlertClosed(param1:starling.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onCachedErrorAlertClosed")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onCachedErrorAlertClosed"
+         param Qname(PackageNamespace("starling.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_1
+         getproperty Qname(PackageNamespace(""),"target")
+         getlex Qname(PackageNamespace("_-2T5"),"Alert")
+         astypelate
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         findpropstrict Qname(PackageNamespace(""),"removeEventListener")
+         pushstring "enterFrame"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onEnterFrame")
+         callpropvoid Qname(PackageNamespace(""),"removeEventListener") 2
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"prepareCore") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function prepareCore() : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"prepareCore")
+         dispid 0
+         method
+         name "HabboTabletMain/private:prepareCore"
+         flag NEED_ACTIVATION
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 10
+         maxscopedepth 15
+         try from ofs0015 to ofs0291 target ofs0295 type Qname(PackageNamespace(""),"Error") name Qname(PackageNamespace(""),"error")
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 496
+         newactivation
+         dup
+         setlocal_1
+         pushscope
+         getscopeobject 1
+         pushbyte 0
+         coerce_a
+         setslot 1
+         ofs0015:getscopeobject 1
+         findpropstrict Qname(PackageNamespace(""),"uint")
+         findpropstrict Qname(PackageNamespace(""),"uint")
+         pushbyte 1
+         callproperty Qname(PackageNamespace(""),"uint") 1
+         callproperty Qname(PackageNamespace(""),"uint") 1
+         coerce_a
+         setslot 1
+         getlocal_0
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         getlex Qname(PackageNamespace(""),"stage")
+         getscopeobject 1
+         getslot 1
+         findpropstrict Qname(PrivateNamespace("HabboTabletMain.as$1"),"HabboCoreErrorReporter")
+         constructprop Qname(PrivateNamespace("HabboTabletMain.as$1"),"HabboCoreErrorReporter") 0
+         callproperty Qname(PackageNamespace(""),"_-4i9") 3
+         coerce Qname(PackageNamespace("_-1jS"),"_-1TR")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "COMPONENT_EVENT_ERROR"
+         getlocal_0
+         getproperty Qname(PackageNamespace(""),"onCoreError")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "COMPONENT_EVENT_REBOOT"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onCoreReboot")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace("_-1jS"),"CoreComponentContext")
+         astypelate
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_stage3DProxy")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_starling")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_view3D")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_gradientRenderer")
+         callpropvoid Qname(PackageNamespace(""),"_-37o") 4
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace("_-1jS"),"CoreComponentContext")
+         astypelate
+         findpropstrict Qname(PackageNamespace("_-3yu"),"_-0ek")
+         constructprop Qname(PackageNamespace("_-3yu"),"_-0ek") 0
+         coerce Qname(PackageNamespace("_-3V6"),"_-1PG")
+         setproperty Qname(PackageNamespace(""),"fileProxy")
+         getlex Qname(PackageNamespace("_-3yu"),"_-1a9")
+         callproperty Multiname("isSupported",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         iffalse ofs00c8
+         getlex Qname(PackageNamespace("_-3A1"),"_-dE")
+         findpropstrict Qname(PackageNamespace("_-3yu"),"_-1a9")
+         constructprop Qname(PackageNamespace("_-3yu"),"_-1a9") 0
+         coerce_a
+         setproperty Multiname("_-2qa",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         ofs00c8:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         getproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         iffalse ofs00dd
+         getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         getproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callpropvoid Multiname("dispose",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         ofs00dd:getlex Qname(PackageNamespace("_-pM"),"_-7C")
+         findpropstrict Qname(PackageNamespace("_-3yu"),"_-37U")
+         constructprop Qname(PackageNamespace("_-3yu"),"_-37U") 0
+         coerce_a
+         setproperty Multiname("_-0L2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         findpropstrict Qname(PackageNamespace("com.sulake.iid"),"IIDHabboCommunicationDemo")
+         constructprop Qname(PackageNamespace("com.sulake.iid"),"IIDHabboCommunicationDemo") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onCommunicationDemoReady")
+         callpropvoid Multiname("queueInterface",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         findpropstrict Qname(PackageNamespace("com.sulake.iid"),"IIDHabboConfigurationManager")
+         constructprop Qname(PackageNamespace("com.sulake.iid"),"IIDHabboConfigurationManager") 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onConfigurationManagerReady")
+         callpropvoid Multiname("queueInterface",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         findpropstrict Qname(PackageNamespace("com.sulake.iid"),"IIDCoreLocalizationManager")
+         constructprop Qname(PackageNamespace("com.sulake.iid"),"IIDCoreLocalizationManager") 0
+         getlex Qname(PrivateNamespace(":HabboTabletMain"),"receiveQueuedInterface")
+         callpropvoid Multiname("queueInterface",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"CoreCommunicationFrameworkLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"RoomManagerLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"RoomSpriteRendererLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboConfigurationCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboLocalizationCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboCommunicationCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboCommunicationDemoCom")
+         pushbyte 1
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboTrackingLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboUI3dCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboRoomEngineCom")
+         pushbyte 2
+         pushbyte 1
+         bitor
+         pushbyte 4
+         bitor
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboRoomSessionManagerLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboRoomObjectLogicLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboRoomObjectVisualizationLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboSessionDataManagerLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboAvatarRenderLib")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboTabletNavigatorCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboAdManagerCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboTabletInventoryCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboTabletCatalogCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboSoundManagerFlash10Com")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboUserDefinedRoomEventsCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"HabboQuestEngineCom")
+         callpropvoid Multiname("_-1-y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         getlocal_0
+         getlex Qname(PackageNamespace("_-47s"),"HabboTracking")
+         callproperty Qname(PackageNamespace(""),"getInstance") 0
+         coerce Qname(PackageNamespace("_-47s"),"HabboTracking")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_tracking")
+         getlocal_0
+         pushdouble 0.4
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"updateLoadingProgressTo") 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         findpropstrict Qname(PackageNamespace(""),"XML")
+         constructprop Qname(PackageNamespace(""),"XML") 0
+         getlocal_0
+         callpropvoid Multiname("_-1JS",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         returnvoid
+         ofs0291:jump ofs02ac
+         ofs0295:getlocal_0
+         pushscope
+         getlocal_1
+         pushscope
+         newcatch 0
+         dup
+         setlocal_2
+         dup
+         pushscope
+         swap
+         setslot 1
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         returnvoid
+         popscope
+         kill 2
+         ofs02ac:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onCommunicationDemoReady(param1:§_-4Sv§, param2:§_-2CC§) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onCommunicationDemoReady")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onCommunicationDemoReady"
+         param Qname(PackageNamespace("_-1jS"),"_-4Sv")
+         param Qname(PackageNamespace("_-1jS"),"_-2CC")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "param2" 1 0
+         getlocal_0
+         pushbyte 1
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"updateLoadingProgressTo") 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_preloader")
+         iffalse ofs002b
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_preloader")
+         callpropvoid Qname(PackageNamespace(""),"hideLoadingScreen") 0
+         ofs002b:getlocal_2
+         getlocal_1
+         callpropvoid Multiname("release",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onConfigurationManagerReady(param1:§_-4Sv§, param2:§_-0ZE§) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onConfigurationManagerReady")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onConfigurationManagerReady"
+         param Qname(PackageNamespace("_-1jS"),"_-4Sv")
+         param Qname(PackageNamespace("_-2En"),"_-0ZE")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "param2" 1 0
+         getlocal_0
+         getlocal_2
+         coerce Qname(PackageNamespace("_-2En"),"_-0ZE")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_configurationManager")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_configurationManager")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onConfigurationsReady")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onConfigurationsReady(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onConfigurationsReady")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onConfigurationsReady"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_configurationManager")
+         getproperty Multiname("events",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         pushstring "complete"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onConfigurationsReady")
+         callpropvoid Multiname("removeEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_configurationManager")
+         pushstring "tablet.low_mem_event.enabled"
+         callproperty Multiname("getBoolean",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 1
+         iffalse ofs0053
+         getlocal_0
+         findpropstrict Qname(PackageNamespace("_-1wE"),"_-4PF")
+         constructprop Qname(PackageNamespace("_-1wE"),"_-4PF") 0
+         coerce Qname(PackageNamespace("_-1wE"),"_-4PF")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_memoryMonitor")
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_memoryMonitor")
+         pushstring "MemoryWarning"
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"onMemoryWarning")
+         callpropvoid Multiname("addEventListener",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 2
+         ofs0053:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onCoreReboot(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onCoreReboot")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onCoreReboot"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Reboot application! "
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("privateMemory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("totalMemory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("totalMemoryNumber",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callpropvoid Qname(PackageNamespace(""),"log") 3
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         callpropvoid Qname(PackageNamespace(""),"dispose") 0
+         getlocal_0
+         pushnull
+         coerce Qname(PackageNamespace("_-1jS"),"_-1TR")
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "Application ready for restart! "
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("privateMemory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("totalMemory",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         getlex Qname(PackageNamespace("flash.system"),"System")
+         getproperty Multiname("totalMemoryNumber",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         callpropvoid Qname(PackageNamespace(""),"log") 3
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"init") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set preloader(param1:HabboTablet) : void
+      {
+         trait setter Qname(PackageNamespace(""),"preloader")
+         dispid 0
+         method
+         name "HabboTabletMain:preloader/set"
+         param Qname(PackageNamespace(""),"HabboTablet")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         getlocal_1
+         setproperty Qname(PrivateNamespace(":HabboTabletMain"),"_preloader")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function updateLoadingProgressTo(param1:Number) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"updateLoadingProgressTo")
+         dispid 0
+         method
+         name "HabboTabletMain/private:updateLoadingProgressTo"
+         param Qname(PackageNamespace(""),"Number")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         debug 1 "_loc2_" 1 593
+         pushnan
+         setlocal_2
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_preloader")
+         iffalse ofs003f
+         pushdouble 0.7
+         getlocal_1
+         pushbyte 1
+         pushdouble 0.7
+         subtract
+         multiply
+         add
+         coerce Qname(PackageNamespace(""),"Number")
+         setlocal_2
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "**** Updating after core ratio to: "
+         getlocal_2
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_preloader")
+         getlocal_2
+         callpropvoid Qname(PackageNamespace(""),"updateLoadingBarProgressTo") 1
+         ofs003f:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onCompleteEvent(param1:flash.events.Event) : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"onCompleteEvent")
+         dispid 0
+         method
+         name "HabboTabletMain/private:onCompleteEvent"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlocal_0
+         pushdouble 0.8
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"updateLoadingProgressTo") 1
+         getlocal_0
+         callpropvoid Qname(PrivateNamespace(":HabboTabletMain"),"initializeCore") 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function initializeCore() : void
+      {
+         trait method Qname(PrivateNamespace(":HabboTabletMain"),"initializeCore")
+         dispid 0
+         method
+         name "HabboTabletMain/private:initializeCore"
+         flag NEED_ACTIVATION
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 10
+         maxscopedepth 15
+         try from ofs000d to ofs0018 target ofs001c type Qname(PackageNamespace(""),"Error") name Qname(PackageNamespace(""),"error")
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "+$activation" 0 0
+         newactivation
+         dup
+         setlocal_1
+         pushscope
+         ofs000d:getlocal_0
+         getproperty Qname(PrivateNamespace(":HabboTabletMain"),"_core")
+         callpropvoid Multiname("initialize",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")]) 0
+         returnvoid
+         ofs0018:jump ofs0047
+         ofs001c:getlocal_0
+         pushscope
+         getlocal_1
+         pushscope
+         newcatch 0
+         dup
+         setlocal_2
+         dup
+         pushscope
+         swap
+         setslot 1
+         getlex Qname(PackageNamespace("_-3qH"),"Core")
+         pushstring "Failed to initialize the core: "
+         getscopeobject 2
+         getslot 1
+         getproperty Multiname("message",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         pushbyte 10
+         getscopeobject 2
+         getslot 1
+         callpropvoid Qname(PackageNamespace(""),"_-2Kk") 3
+         returnvoid
+         popscope
+         kill 2
+         ofs0047:returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function onCoreError(param1:flash.events.Event) : void
+      {
+         trait method Qname(PackageNamespace(""),"onCoreError")
+         dispid 0
+         method
+         name "HabboTabletMain:onCoreError"
+         param Qname(PackageNamespace("flash.events"),"Event")
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "param1" 0 0
+         getlex Qname(PackageNamespace(""),"Logger")
+         pushstring "TabletMain: onCoreError "
+         getlocal_1
+         getproperty Multiname("type",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":HabboTabletMain"),ProtectedNamespace(":HabboTabletMain"),StaticProtectedNs(":HabboTabletMain"),PrivateNamespace("HabboTabletMain.as$1")])
+         add
+         callpropvoid Qname(PackageNamespace(""),"log") 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}
+
+import §_-1jS§.§_-1zw§;
+import §_-1jS§.§_-H5§;
+
+class HabboCoreErrorReporter implements §_-1zw§
+{
+   
+   {
+      method
+      name ""
+      returns null
+      
+      body
+      maxstack 1
+      localcount 1
+      initscopedepth 3
+      maxscopedepth 4
+      
+      code
+      getlocal_0
+      pushscope
+      returnvoid
+      end ; code
+      end ; body
+      end ; method
+   }
+   
+   private var _logger:§_-H5§;
+   
+   function HabboCoreErrorReporter()
+   {
+      method
+      name "HabboTabletMain.as$1:HabboCoreErrorReporter/HabboCoreErrorReporter"
+      returns null
+      
+      body
+      maxstack 1
+      localcount 1
+      initscopedepth 3
+      maxscopedepth 4
+      
+      code
+      getlocal_0
+      pushscope
+      getlocal_0
+      constructsuper 0
+      returnvoid
+      end ; code
+      end ; body
+      end ; method
+   }
+   
+   public function logError(param1:String, param2:Boolean, param3:int = -1, param4:Error = null) : void
+   {
+      trait method Qname(PackageNamespace(""),"logError")
+      dispid 0
+      method
+      name "HabboTabletMain.as$1:HabboCoreErrorReporter:logError"
+      flag HAS_OPTIONAL
+      param Qname(PackageNamespace(""),"String")
+      param Qname(PackageNamespace(""),"Boolean")
+      param Qname(PackageNamespace(""),"int")
+      param Qname(PackageNamespace(""),"Error")
+      optional -1
+      optional null
+      returns Qname(PackageNamespace(""),"void")
+      
+      body
+      maxstack 6
+      localcount 5
+      initscopedepth 3
+      maxscopedepth 4
+      
+      code
+      getlocal_0
+      pushscope
+      debug 1 "param1" 0 0
+      debug 1 "param2" 1 0
+      debug 1 "param3" 2 0
+      debug 1 "param4" 3 0
+      getlex Qname(PackageNamespace(""),"HabboTablet")
+      getlocal_1
+      getlocal_3
+      getlocal_2
+      getlocal 4
+      getlocal_0
+      getproperty Qname(PrivateNamespace("HabboTabletMain.as$1:HabboCoreErrorReporter"),"_logger")
+      callpropvoid Qname(PackageNamespace(""),"reportCrash") 5
+      returnvoid
+      end ; code
+      end ; body
+      end ; method
+   }
+   
+   public function set errorLogger(param1:§_-H5§) : void
+   {
+      trait setter Qname(PackageNamespace(""),"errorLogger")
+      dispid 0
+      method
+      name "HabboTabletMain.as$1:HabboCoreErrorReporter:errorLogger/set"
+      param Qname(PackageNamespace("_-1jS"),"_-H5")
+      returns Qname(PackageNamespace(""),"void")
+      
+      body
+      maxstack 2
+      localcount 2
+      initscopedepth 3
+      maxscopedepth 4
+      
+      code
+      getlocal_0
+      pushscope
+      debug 1 "param1" 0 0
+      getlocal_0
+      getlocal_1
+      coerce Qname(PackageNamespace("_-1jS"),"_-H5")
+      setproperty Qname(PrivateNamespace("HabboTabletMain.as$1:HabboCoreErrorReporter"),"_logger")
+      returnvoid
+      end ; code
+      end ; body
+      end ; method
+   }
+}

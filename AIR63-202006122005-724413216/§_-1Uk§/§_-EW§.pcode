@@ -1,0 +1,117 @@
+package §_-1Uk§
+{
+   import §_-0PM§.§_-45p§;
+   import §_-0PM§.§_-4JV§;
+   
+   [SecureSWF(rename="true")]
+   public class §_-EW§ implements §_-4JV§, §_-45p§
+   {
+      
+      {
+         method
+         name ""
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal_0
+         pushscope
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var §_-4O8§:String = "air16";
+      
+      public function §_-EW§()
+      {
+         method
+         name "_-1Uk:_-EW/_-EW"
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal_0
+         pushscope
+         getlocal_0
+         constructsuper 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function dispose() : void
+      {
+         trait method Qname(PackageNamespace(""),"dispose")
+         dispid 0
+         method
+         name "_-1Uk:_-EW:dispose"
+         returns Qname(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal_0
+         pushscope
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function §_-4U7§() : Array
+      {
+         trait method Qname(PackageNamespace(""),"_-4U7")
+         dispid 0
+         method
+         name "_-1Uk:_-EW:_-4U7"
+         returns Qname(PackageNamespace(""),"Array")
+         
+         body
+         maxstack 5
+         localcount 4
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal_0
+         pushscope
+         debug 1 "_loc1_" 0 25
+         debug 1 "_loc2_" 1 27
+         debug 1 "_loc3_" 2 26
+         pushstring "AIR63-202006122005-724413216"
+         coerce_s
+         setlocal_1
+         pushbyte 3
+         setlocal_3
+         pushbyte 1
+         setlocal_2
+         findpropstrict Qname(PackageNamespace(""),"Array")
+         getlocal_1
+         getlex Qname(PrivateNamespace("_-1Uk:_-EW"),"_-4O8")
+         getlocal_3
+         getlocal_2
+         constructprop Qname(PackageNamespace(""),"Array") 4
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}
